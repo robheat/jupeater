@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Jupeater
 
-## Getting Started
+Jupeater is a Next.js website for discovering dining options in Jupiter, Florida.
+The current implementation includes:
 
-First, run the development server:
+- Homepage with featured restaurants
+- Filterable restaurant directory
+- Dynamic restaurant detail pages
+- Map overview page
+- Owner listing submission flow (moderated)
+- User reviews flow (moderated)
+- Newsletter opt-in capture
+
+## Stack
+
+- Next.js 16 App Router
+- TypeScript
+- Tailwind CSS
+- Supabase (Postgres + RLS)
+
+## Local Development
+
+Install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Supabase Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create a Supabase project.
+2. Copy `.env.example` to `.env.local` and set:
 
-## Learn More
+```bash
+NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+ADMIN_DASHBOARD_PASSWORD=choose-a-strong-password
+ADMIN_SESSION_SALT=long-random-string
+```
 
-To learn more about Next.js, take a look at the following resources:
+3. Run SQL in your Supabase SQL editor from:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `supabase/schema.sql`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This creates tables and baseline RLS policies for:
+
+- `owner_submissions`
+- `newsletter_subscribers`
+- `restaurant_reviews`
+
+## Moderation Notes
+
+- Owner submissions are inserted with `pending` status.
+- Reviews are inserted with `pending` status.
+- Only `approved` reviews are displayed publicly.
+- Use `/admin` to review and approve/reject pending records.
+- The admin dashboard requires `ADMIN_DASHBOARD_PASSWORD` and `ADMIN_SESSION_SALT`.
+- The dashboard uses `SUPABASE_SERVICE_ROLE_KEY` on server actions for moderation updates.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repository to GitHub.
+2. Import the project in Vercel.
+3. Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in Vercel project settings.
+4. Deploy.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Next Build Steps
+
+- Add authentication for review submissions
+- Build admin moderation dashboard
+- Expand seed data to 25-50 verified Jupiter listings
+- Add structured data and sitemap automation
+
