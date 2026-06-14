@@ -30,9 +30,20 @@ create table if not exists public.restaurant_reviews (
   created_at timestamptz not null default timezone('utc', now())
 );
 
+create table if not exists public.contact_messages (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  email text not null,
+  topic text not null,
+  message text not null,
+  status text not null default 'pending' check (status in ('pending', 'closed')),
+  created_at timestamptz not null default timezone('utc', now())
+);
+
 alter table public.owner_submissions enable row level security;
 alter table public.newsletter_subscribers enable row level security;
 alter table public.restaurant_reviews enable row level security;
+alter table public.contact_messages enable row level security;
 
 drop policy if exists "Anyone can create owner submissions" on public.owner_submissions;
 create policy "Anyone can create owner submissions"
@@ -61,3 +72,10 @@ on public.restaurant_reviews
 for select
 to anon, authenticated
 using (status = 'approved');
+
+drop policy if exists "Anyone can create contact messages" on public.contact_messages;
+create policy "Anyone can create contact messages"
+on public.contact_messages
+for insert
+to anon, authenticated
+with check (true);

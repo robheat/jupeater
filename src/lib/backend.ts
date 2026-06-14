@@ -23,6 +23,13 @@ const reviewSchema = z.object({
   comment: z.string().trim().min(10).max(1200),
 });
 
+const contactMessageSchema = z.object({
+  name: z.string().trim().min(2).max(100),
+  email: z.string().trim().email(),
+  topic: z.string().trim().min(2).max(100),
+  message: z.string().trim().min(10).max(2000),
+});
+
 export type ReviewRecord = {
   id: string;
   reviewer_name: string;
@@ -160,6 +167,41 @@ export async function createReview(input: {
   }
 
   return { ok: true, message: "Review submitted and pending moderation." };
+}
+
+export async function createContactMessage(input: {
+  name: string;
+  email: string;
+  topic: string;
+  message: string;
+}) {
+  if (!isSupabaseConfigured()) {
+    return {
+      ok: false,
+      message:
+        "Backend is not configured yet. Add Supabase environment variables to enable contact messages.",
+    };
+  }
+
+  const parsed = contactMessageSchema.safeParse(input);
+  if (!parsed.success) {
+    return { ok: false, message: "Please provide valid contact details." };
+  }
+
+  const supabase = getSupabaseClient();
+  const { error } = await supabase.from("contact_messages").insert({
+    name: parsed.data.name,
+    email: parsed.data.email,
+    topic: parsed.data.topic,
+    message: parsed.data.message,
+    status: "pending",
+  });
+
+  if (error) {
+    return { ok: false, message: "Unable to send your message right now." };
+  }
+
+  return { ok: true, message: "Message received. We will follow up soon." };
 }
 
 export async function getPublishedReviews(
