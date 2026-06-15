@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --sand-100: #f6f0e1;
-  --sand-200: #ede2ca;
-  --teal-700: #0b5f6b;
-  --teal-900: #083942;
-  --coral-500: #f47a5b;
-  --ink-900: #132127;
-  --foam-100: #f4faf9;
+  --sand-100: #f7f3e6;
+  --sand-200: #ece1bf;
+  --teal-700: #0d2087;
+  --teal-900: #08145f;
+  --coral-500: #c6ab64;
+  --ink-900: #12183c;
+  --foam-100: #f7f8ff;
 
-  --background: #fffdf8;
+  --background: #fffef9;
   --foreground: var(--ink-900);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-teal-700: var(--teal-700);
+  --color-teal-900: var(--teal-900);
   --font-sans: var(--font-sans);
   --font-display: var(--font-display);
 }
@@ -28,9 +30,9 @@ body {
 
 .page-shell {
   background:
-    radial-gradient(circle at 15% 15%, rgba(244, 122, 91, 0.2), transparent 40%),
-    radial-gradient(circle at 90% 10%, rgba(11, 95, 107, 0.18), transparent 35%),
-    linear-gradient(180deg, #fffdf8 0%, #f7f1e3 100%);
+    radial-gradient(circle at 15% 15%, rgba(198, 171, 100, 0.22), transparent 42%),
+    radial-gradient(circle at 90% 10%, rgba(13, 32, 135, 0.16), transparent 36%),
+    linear-gradient(180deg, #fffef9 0%, #f8f2dc 100%);
 }
 
 .display-title {
@@ -39,7 +41,7 @@ body {
 
 .glass-card {
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(8, 57, 66, 0.12);
+  border: 1px solid rgba(8, 20, 95, 0.14);
   backdrop-filter: blur(6px);
 }
 

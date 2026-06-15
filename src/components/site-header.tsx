@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -10,8 +11,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b border-teal-900/10 bg-[#fffdf8]/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href="/" className="display-title text-3xl leading-none text-[var(--teal-900)]">
-          jupeater
+        <Link href="/" className="inline-flex items-center" aria-label="Jupeater home">
+          <Image
+            src="/jupeater-logo.webp"
+            alt="Jupeater"
+            width={180}
+            height={52}
+            priority
+            className="h-11 w-auto sm:h-12"
+          />
         </Link>
 
         <nav className="flex items-center gap-2 sm:gap-3">
