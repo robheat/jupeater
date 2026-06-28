@@ -5,6 +5,10 @@ export type Restaurant = {
   name: string;
   tagline: string;
   address: string;
+  location: {
+    lat: number;
+    lon: number;
+  };
   neighborhood: string;
   priceTier: PriceTier;
   cuisines: string[];
@@ -25,6 +29,10 @@ const restaurants: Restaurant[] = [
     name: "Guanabanas",
     tagline: "Tropical waterfront dining under the palms.",
     address: "960 N Highway A1A, Jupiter, FL 33477",
+    location: {
+      lat: 26.9425432,
+      lon: -80.0808546,
+    },
     neighborhood: "Jupiter Inlet",
     priceTier: "$$",
     cuisines: ["Seafood", "Caribbean", "American"],
@@ -52,6 +60,10 @@ const restaurants: Restaurant[] = [
     name: "U-Tiki Beach",
     tagline: "Dock-and-dine with panoramic Intracoastal views.",
     address: "1095 N Highway A1A, Jupiter, FL 33477",
+    location: {
+      lat: 26.9458971,
+      lon: -80.0838222,
+    },
     neighborhood: "Jupiter Inlet",
     priceTier: "$$",
     cuisines: ["Seafood", "American"],
@@ -79,6 +91,10 @@ const restaurants: Restaurant[] = [
     name: "Little Moir's Food Shack",
     tagline: "Award-winning creative seafood in a casual setting.",
     address: "103 US-1, Jupiter, FL 33477",
+    location: {
+      lat: 26.9324664,
+      lon: -80.0790973,
+    },
     neighborhood: "Central Jupiter",
     priceTier: "$$",
     cuisines: ["Seafood", "Global"],
@@ -106,6 +122,10 @@ const restaurants: Restaurant[] = [
     name: "Jetty's Waterfront Restaurant",
     tagline: "Classic local favorite with riverfront seating.",
     address: "1075 N Highway A1A, Jupiter, FL 33477",
+    location: {
+      lat: 26.9431,
+      lon: -80.0822,
+    },
     neighborhood: "Jupiter Inlet",
     priceTier: "$$",
     cuisines: ["Seafood", "American"],
@@ -133,6 +153,10 @@ const restaurants: Restaurant[] = [
     name: "Tavolena Ristorante",
     tagline: "Authentic Northern Italian cuisine in a warm setting.",
     address: "185 E Indiantown Rd Ste 123, Jupiter, FL 33477",
+    location: {
+      lat: 26.9352802,
+      lon: -80.09082,
+    },
     neighborhood: "Central Jupiter",
     priceTier: "$$$",
     cuisines: ["Italian"],
@@ -160,6 +184,10 @@ const restaurants: Restaurant[] = [
     name: "Thai Lotus",
     tagline: "Authentic Thai cuisine with traditional flavors.",
     address: "201 North US-1 # C-4, Jupiter, FL 33477",
+    location: {
+      lat: 26.9312019,
+      lon: -80.0792817,
+    },
     neighborhood: "Central Jupiter",
     priceTier: "$$",
     cuisines: ["Thai", "Asian"],
@@ -187,6 +215,10 @@ const restaurants: Restaurant[] = [
     name: "Taco Maki Jupiter",
     tagline: "Fusion of Mexican and Japanese cuisines with creative rolls.",
     address: "1155 Main St Ste 120, Jupiter, FL 33477",
+    location: {
+      lat: 26.8886563,
+      lon: -80.1145833,
+    },
     neighborhood: "Downtown Jupiter",
     priceTier: "$$",
     cuisines: ["Mexican", "Japanese", "Fusion"],
@@ -214,6 +246,10 @@ const restaurants: Restaurant[] = [
     name: "Sea Racha Asian Cuisine and Bar",
     tagline: "Vibrant Thai and pan-Asian cuisine in downtown Jupiter.",
     address: "103 US-1 STE B5-B6, Jupiter, FL 33477",
+    location: {
+      lat: 26.9342246,
+      lon: -80.0942087,
+    },
     neighborhood: "Central Jupiter",
     priceTier: "$$",
     cuisines: ["Thai", "Asian", "Seafood"],
@@ -241,6 +277,10 @@ const restaurants: Restaurant[] = [
     name: "Ruth's Chris Steak House",
     tagline: "Premium steakhouse with sizzling steaks and fine wines.",
     address: "105 Breakwater Ct, Jupiter, FL 33477",
+    location: {
+      lat: 26.9356686,
+      lon: -80.0824482,
+    },
     neighborhood: "Harbourside",
     priceTier: "$$$",
     cuisines: ["Steakhouse", "American"],
@@ -268,6 +308,10 @@ const restaurants: Restaurant[] = [
     name: "Lynora's Italian Restaurant",
     tagline: "Beloved family Italian restaurant since 1980.",
     address: "1548 US-1, Jupiter, FL 33477",
+    location: {
+      lat: 26.9534401,
+      lon: -80.0853315,
+    },
     neighborhood: "Central Jupiter",
     priceTier: "$$",
     cuisines: ["Italian"],
