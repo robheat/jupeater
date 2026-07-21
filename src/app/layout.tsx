@@ -39,6 +39,23 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/jupeater-logo.webp`,
+  description: SITE_DESCRIPTION,
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -47,6 +64,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${displayFont.variable} ${sansFont.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema).replace(/</g, "\\u003c"),
+          }}
+        />
         {children}
         <SiteFooter />
       </body>

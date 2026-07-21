@@ -1,8 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import { RestaurantCard } from "@/components/restaurant-card";
 import { SiteHeader } from "@/components/site-header";
 import { getFeaturedRestaurants } from "@/lib/restaurants";
+import { SITE_URL } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: SITE_URL },
+};
 
 export default function Home() {
   const featuredRestaurants = getFeaturedRestaurants();

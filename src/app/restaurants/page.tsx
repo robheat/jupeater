@@ -10,11 +10,13 @@ import {
   getRestaurants,
   type PriceTier,
 } from "@/lib/restaurants";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "All Jupiter Restaurants",
   description:
     "Browse and filter every Jupiter, Florida restaurant listing by neighborhood, cuisine, and price.",
+  alternates: { canonical: `${SITE_URL}/restaurants` },
 };
 
 type RestaurantsPageProps = {
@@ -41,8 +43,25 @@ export default async function RestaurantsPage({ searchParams }: RestaurantsPageP
   const cuisineOptions = getCuisineOptions();
   const neighborhoodOptions = getNeighborhoodOptions();
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: restaurants.map((restaurant, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${SITE_URL}/restaurants/${restaurant.slug}`,
+      name: restaurant.name,
+    })),
+  };
+
   return (
     <div className="page-shell min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(itemListSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <SiteHeader />
 
       <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">

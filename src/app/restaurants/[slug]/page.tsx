@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -5,6 +6,7 @@ import { notFound } from "next/navigation";
 import { submitRestaurantReview } from "@/app/restaurants/[slug]/actions";
 import { SiteHeader } from "@/components/site-header";
 import { getPublishedReviews } from "@/lib/backend";
+import { parseOpeningHours } from "@/lib/hours";
 import { getRestaurantBySlug, getRestaurants } from "@/lib/restaurants";
 import { SITE_URL } from "@/lib/site";
 
@@ -65,6 +67,12 @@ export default async function RestaurantDetailPage({
 
   const publishedReviews = await getPublishedReviews(slug);
 
+  const averageRating =
+    publishedReviews.length > 0
+      ? publishedReviews.reduce((sum, review) => sum + review.rating, 0) /
+        publishedReviews.length
+      : null;
+
   const restaurantSchema = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
@@ -86,6 +94,31 @@ export default async function RestaurantDetailPage({
     url: restaurant.website,
     priceRange: restaurant.priceTier,
     servesCuisine: restaurant.cuisines,
+    openingHoursSpecification: parseOpeningHours(restaurant.hours),
+    ...(averageRating
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: averageRating.toFixed(1),
+            reviewCount: publishedReviews.length,
+          },
+        }
+      : {}),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Restaurants", item: `${SITE_URL}/restaurants` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: restaurant.name,
+        item: `${SITE_URL}/restaurants/${restaurant.slug}`,
+      },
+    ],
   };
 
   return (
@@ -94,6 +127,12 @@ export default async function RestaurantDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(restaurantSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
       <SiteHeader />
@@ -129,6 +168,19 @@ export default async function RestaurantDetailPage({
             {restaurant.description}
           </p>
 
+          {restaurant.photoUrls[0] && (
+            <div className="relative mt-6 h-64 w-full overflow-hidden rounded-2xl border border-teal-900/15 sm:h-80">
+              <Image
+                src={restaurant.photoUrls[0]}
+                alt={`${restaurant.name} in ${restaurant.neighborhood}, Jupiter FL`}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+              />
+            </div>
+          )}
+
           <div className="mt-8 rounded-2xl border border-teal-900/15 bg-white/80 p-4">
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-teal-700">
               Photo Gallery
@@ -142,15 +194,15 @@ export default async function RestaurantDetailPage({
                     href={url}
                     target="_blank"
                     rel="noreferrer"
-                    className="group overflow-hidden rounded-xl border border-teal-900/15 bg-white"
+                    className="group relative block h-40 overflow-hidden rounded-xl border border-teal-900/15 bg-white"
                   >
-                    <div
-                      className="h-40 bg-cover bg-center transition duration-300 group-hover:scale-[1.03]"
-                      style={{ backgroundImage: `url(${url})` }}
+                    <Image
+                      src={url}
+                      alt={`${restaurant.name} photo ${index + 1}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition duration-300 group-hover:scale-[1.03]"
                     />
-                    <p className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-teal-900">
-                      Photo {index + 1}
-                    </p>
                   </a>
                 ))}
               </div>
