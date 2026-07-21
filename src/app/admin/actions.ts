@@ -9,8 +9,14 @@ import {
   createAdminSession,
   isAdminAuthenticated,
 } from "@/lib/admin-auth";
+import { getRequestIp, isRateLimited } from "@/lib/rate-limit";
 
 export async function adminSignIn(formData: FormData) {
+  const ip = await getRequestIp();
+  if (isRateLimited(`admin-sign-in:${ip}`, 5, 15 * 60 * 1000)) {
+    redirect("/admin?status=error&message=Too+many+attempts.+Try+again+later.");
+  }
+
   const password = String(formData.get("password") ?? "");
   const ok = await createAdminSession(password);
 

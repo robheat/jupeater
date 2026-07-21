@@ -1,10 +1,12 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { submitRestaurantReview } from "@/app/restaurants/[slug]/actions";
 import { SiteHeader } from "@/components/site-header";
 import { getPublishedReviews } from "@/lib/backend";
 import { getRestaurantBySlug, getRestaurants } from "@/lib/restaurants";
+import { SITE_URL } from "@/lib/site";
 
 type RestaurantDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -13,6 +15,40 @@ type RestaurantDetailPageProps = {
 
 export function generateStaticParams() {
   return getRestaurants().map((restaurant) => ({ slug: restaurant.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: RestaurantDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const restaurant = getRestaurantBySlug(slug);
+
+  if (!restaurant) {
+    return {};
+  }
+
+  const title = `${restaurant.name} | ${restaurant.neighborhood}`;
+  const description = restaurant.tagline;
+  const image = restaurant.photoUrls[0];
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `${SITE_URL}/restaurants/${restaurant.slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/restaurants/${restaurant.slug}`,
+      type: "article",
+      images: image ? [{ url: image }] : undefined,
+    },
+    twitter: {
+      card: image ? "summary_large_image" : "summary",
+      title,
+      description,
+      images: image ? [image] : undefined,
+    },
+  };
 }
 
 export default async function RestaurantDetailPage({
@@ -29,8 +65,37 @@ export default async function RestaurantDetailPage({
 
   const publishedReviews = await getPublishedReviews(slug);
 
+  const restaurantSchema = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    name: restaurant.name,
+    description: restaurant.description,
+    image: restaurant.photoUrls,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: restaurant.address,
+      addressLocality: "Jupiter",
+      addressRegion: "FL",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: restaurant.location.lat,
+      longitude: restaurant.location.lon,
+    },
+    telephone: restaurant.phone,
+    url: restaurant.website,
+    priceRange: restaurant.priceTier,
+    servesCuisine: restaurant.cuisines,
+  };
+
   return (
     <div className="page-shell min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(restaurantSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <SiteHeader />
 
       <main className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6">
@@ -178,6 +243,11 @@ export default async function RestaurantDetailPage({
 
             <form action={submitRestaurantReview} className="mt-4 grid gap-3">
               <input type="hidden" name="restaurantSlug" value={restaurant.slug} />
+
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="review-website">Website</label>
+                <input type="text" id="review-website" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
 
               <label className="grid gap-1 text-sm font-medium text-slate-700">
                 Name

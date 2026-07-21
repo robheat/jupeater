@@ -1,7 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import { submitContactMessage } from "@/app/contact/actions";
 import { SiteHeader } from "@/components/site-header";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Get in touch with the Jupeater team about listings, partnerships, or support.",
+};
 
 type ContactPageProps = {
   searchParams: Promise<{ status?: string; message?: string }>;
@@ -46,6 +52,11 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             )}
 
             <form action={submitContactMessage} className="grid gap-3 rounded-2xl border border-teal-900/15 bg-white/80 p-4">
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="contact-website">Website</label>
+                <input type="text" id="contact-website" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
+
               <label className="grid gap-1 text-sm font-medium text-slate-700">
                 Name
                 <input

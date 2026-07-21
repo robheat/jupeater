@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import {
   adminSignIn,
   adminSignOut,
@@ -8,6 +10,11 @@ import { SiteHeader } from "@/components/site-header";
 import { getPendingOwnerSubmissions, getPendingReviews } from "@/lib/backend";
 import { isAdminAuthenticated, isAdminConfigured } from "@/lib/admin-auth";
 import { isSupabaseConfigured } from "@/lib/supabase";
+
+export const metadata: Metadata = {
+  title: "Admin",
+  robots: { index: false, follow: false },
+};
 
 type AdminPageProps = {
   searchParams: Promise<{ status?: string; message?: string }>;

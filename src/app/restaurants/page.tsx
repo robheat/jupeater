@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import { RestaurantCard } from "@/components/restaurant-card";
 import { SiteHeader } from "@/components/site-header";
@@ -9,6 +10,12 @@ import {
   getRestaurants,
   type PriceTier,
 } from "@/lib/restaurants";
+
+export const metadata: Metadata = {
+  title: "All Jupiter Restaurants",
+  description:
+    "Browse and filter every Jupiter, Florida restaurant listing by neighborhood, cuisine, and price.",
+};
 
 type RestaurantsPageProps = {
   searchParams: Promise<{

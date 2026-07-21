@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
+
 import { SiteHeader } from "@/components/site-header";
+
+export const metadata: Metadata = {
+  title: "Privacy Notice",
+  description: "How Jupeater collects and uses data from listing submissions and reviews.",
+};
 
 export default function PrivacyPage() {
   return (

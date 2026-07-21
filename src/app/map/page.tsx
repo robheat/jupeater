@@ -1,6 +1,12 @@
 import { SiteHeader } from "@/components/site-header";
 import { getRestaurants } from "@/lib/restaurants";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Map View",
+  description: "See every Jupiter, Florida restaurant listing plotted on a map.",
+};
 
 const MAP_WIDTH = 960;
 const MAP_HEIGHT = 560;

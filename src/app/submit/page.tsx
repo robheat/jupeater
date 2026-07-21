@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
+
 import { SiteHeader } from "@/components/site-header";
 import { submitRestaurantListing } from "@/app/submit/actions";
+
+export const metadata: Metadata = {
+  title: "Submit a Listing",
+  description: "Submit or update a Jupiter, Florida restaurant listing for review.",
+};
 
 type SubmitPageProps = {
   searchParams: Promise<{ status?: string; message?: string }>;
@@ -38,6 +45,11 @@ export default async function SubmitPage({ searchParams }: SubmitPageProps) {
           )}
 
           <form action={submitRestaurantListing} className="mt-8 grid gap-4">
+            <div className="hidden" aria-hidden="true">
+              <label htmlFor="submit-website">Website</label>
+              <input type="text" id="submit-website" name="website" tabIndex={-1} autoComplete="off" />
+            </div>
+
             <label className="grid gap-1 text-sm font-medium text-slate-700">
               Restaurant name
               <input
