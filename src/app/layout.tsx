@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Cormorant_Garamond, Sora } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
@@ -78,6 +79,7 @@ export default function RootLayout({
         />
         {children}
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );
