@@ -3,7 +3,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      { protocol: "https", hostname: "www.guanabanas.com" },
       { protocol: "https", hostname: "static.wixstatic.com" },
       { protocol: "https", hostname: "littlemoirsfoodshack.com" },
       { protocol: "https", hostname: "tavolena.com" },
@@ -20,6 +19,9 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "calaverascantina.com" },
       { protocol: "https", hostname: "delpestojupiter.com" },
       { protocol: "https", hostname: "thetwistedtuna.com" },
+      { protocol: "https", hostname: "arthurandsonsnyc.com" },
+      { protocol: "https", hostname: "images.squarespace-cdn.com" },
+      { protocol: "https", hostname: "thirstyturtlefl.com" },
     ],
   },
 };

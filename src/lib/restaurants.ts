@@ -46,11 +46,11 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 747-8878",
     website: "https://www.guanabanas.com",
-    mapUrl: "https://maps.google.com/?q=960+N+Highway+A1A+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Guanabanas%2C+960+N+Highway+A1A%2C+Jupiter%2C+FL+33477",
     photoUrls: [
-      "https://www.guanabanas.com/wp-content/uploads/GUANAS_2020_WEB_040.jpg",
-      "https://www.guanabanas.com/wp-content/uploads/GUANAS_2020_WEB_079.jpg",
-      "https://www.guanabanas.com/wp-content/uploads/home-live-music.jpg",
+      "/restaurants/guanabanas/guanabanas-1.jpg",
+      "/restaurants/guanabanas/guanabanas-2.jpg",
+      "/restaurants/guanabanas/guanabanas-3.jpg",
     ],
     featured: true,
     dietaryOptions: ["Gluten-Sensitive Options"],
@@ -76,7 +76,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 406-2210",
     website: "https://www.utikibeach.com",
-    mapUrl: "https://maps.google.com/?q=1095+N+Highway+A1A+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=U-Tiki+Beach%2C+1095+N+Highway+A1A%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://static.wixstatic.com/media/a9bfdc_0c5c2d85877e4263ac4a48b9ab06dc3b.jpg/v1/fill/w_972,h_600,al_c,q_80,enc_avif,quality_auto/a9bfdc_0c5c2d85877e4263ac4a48b9ab06dc3b.jpg",
       "https://static.wixstatic.com/media/a9bfdc_d492826766124d759579d1f671c7afb9.jpg/v1/fill/w_972,h_600,al_c,q_80,enc_avif,quality_auto/a9bfdc_d492826766124d759579d1f671c7afb9.jpg",
@@ -92,8 +92,8 @@ const restaurants: Restaurant[] = [
     tagline: "A simple twist of taste — creative seafood in a casual shack.",
     address: "103 S US Highway 1, Ste D3, Jupiter, FL 33477",
     location: {
-      lat: 26.9347,
-      lon: -80.0895,
+      lat: 26.932485,
+      lon: -80.077801,
     },
     neighborhood: "Central Jupiter",
     priceTier: "$$",
@@ -108,7 +108,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 741-3626",
     website: "https://littlemoirsfoodshack.com",
-    mapUrl: "https://maps.google.com/?q=103+S+US+Highway+1+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Little+Moir's+Food+Shack%2C+103+S+US+Highway+1%2C+Ste+D3%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://littlemoirsfoodshack.com/wp-content/uploads/2024/05/Food-Shack-Hero-Background-2.webp",
       "https://littlemoirsfoodshack.com/wp-content/uploads/2024/05/The-Shack-Menu-Hero-1024x427.webp",
@@ -139,7 +139,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 743-8166",
     website: "https://www.jettysjupiter.com",
-    mapUrl: "https://maps.google.com/?q=1075+N+Highway+A1A+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Jetty's+Waterfront+Restaurant%2C+1075+N+Highway+A1A%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://static.wixstatic.com/media/a9bfdc_bd58b3e48d0d4fbe96090dd6e0a9e0db~mv2.jpg",
       "https://static.wixstatic.com/media/a9bfdc_0f0ce40a171c4f0b8247afedf353c528~mv2.jpg",
@@ -169,7 +169,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 972-7228",
     website: "https://tavolena.com",
-    mapUrl: "https://maps.google.com/?q=185+E+Indiantown+Rd+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Tavolena+Ristorante%2C+185+E+Indiantown+Rd%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://tavolena.com/wp-content/uploads/2023/10/CozyDining.jpg",
       "https://tavolena.com/wp-content/uploads/2023/10/SpaghettiWithGiantMeatball.jpg",
@@ -199,7 +199,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 320-9121",
     website: "https://thailotusflorida.com/jupiter/",
-    mapUrl: "https://maps.google.com/?q=201+North+US-1+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Thai+Lotus%2C+201+North+US-1+%23+C-4%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/0a/ae/f9/thai-lotus-restaurant.jpg?w=700&h=400&s=1",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/93/3d/fc/sushi-combo.jpg?w=1400&h=800&s=1",
@@ -228,7 +228,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 888-6812",
     website: "https://tacomakijupiter.com",
-    mapUrl: "https://maps.google.com/?q=1155+Main+St+Jupiter+FL+33458",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Taco+Maki+Jupiter%2C+1155+Main+St+Ste+120%2C+Jupiter%2C+FL+33458",
     photoUrls: [
       "https://photos.tryotter.com/menu-photos/04aeae81-543a-4ff6-8691-2a0a7748f23c.jpeg",
       "https://photos.tryotter.com/menu-photos/218905e0-6c06-46ee-9552-2698b802c220.jpeg",
@@ -244,8 +244,8 @@ const restaurants: Restaurant[] = [
     tagline: "Modern Thai and pan-Asian cuisine with a full bar in Central Jupiter.",
     address: "103 S US Highway 1, Ste B5-B6, Jupiter, FL 33477",
     location: {
-      lat: 26.9347,
-      lon: -80.0895,
+      lat: 26.932485,
+      lon: -80.077801,
     },
     neighborhood: "Central Jupiter",
     priceTier: "$$",
@@ -261,7 +261,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 747-6944",
     website: "https://searachajupiter.com",
-    mapUrl: "https://maps.google.com/?q=103+S+US+Highway+1+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Sea+Racha+Asian+Cuisine+and+Bar%2C+103+S+US+Highway+1%2C+Ste+B5-B6%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://searachajupiter.com/wp-content/uploads/2023/11/13.png",
       "https://searachajupiter.com/wp-content/uploads/2022/05/3.jpg",
@@ -292,7 +292,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 831-4440",
     website: "https://www.ruthschris.com/locations/fl/jupiter/jupiter/7380",
-    mapUrl: "https://maps.google.com/?q=105+Breakwater+Ct+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Ruth's+Chris+Steak+House%2C+105+Breakwater+Ct%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://harboursideplace.com/wp-content/uploads/2024/03/ruths-chris-featured-image.webp",
       "https://harboursideplace.com/wp-content/uploads/2024/03/ruths-chris-interior-1.png",
@@ -322,7 +322,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 203-2702",
     website: "https://www.lynoras.com/location/lynoras-jupiter/",
-    mapUrl: "https://maps.google.com/?q=1548+US-1+Jupiter+FL+33469",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Lynora's+Italian+Restaurant%2C+1548+US-1%2C+Jupiter%2C+FL+33469",
     photoUrls: [
       "https://images.getbento.com/accounts/c75f8ca9fa5bb3f01f6b720239e2a376/media/images/27417LENORAS-SHOOT-01557.jpg",
       "https://images.getbento.com/accounts/c75f8ca9fa5bb3f01f6b720239e2a376/media/images/97757IMG_3115.jpeg",
@@ -352,7 +352,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 747-4767",
     website: "https://divebarrestaurant.com",
-    mapUrl: "https://maps.google.com/?q=318+S+US+Highway+1+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Dive+Bar+Restaurant%2C+318+S+US+Highway+1%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://divebarrestaurant.com/wp-content/uploads/2018/10/slider.png",
       "https://divebarrestaurant.com/wp-content/uploads/2018/10/The-Jupiter-Yacht-Club.png",
@@ -382,7 +382,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 453-4333",
     website: "https://zunzibar.com/locations/jupiter-fl",
-    mapUrl: "https://maps.google.com/?q=80+Intracoastal+Point+Dr+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Zunzibar%2C+80+Intracoastal+Point+Dr%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://cdn.sanity.io/images/kllt83hn/production/707eaeeabeab5263d595b335c5ec38d4c84b5f66-4120x3971.jpg",
       "https://cdn.sanity.io/images/kllt83hn/production/414dc5f670d8b9a9b078f402ed67b073a32a6d3b-3354x3904.jpg",
@@ -414,7 +414,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 745-6262",
     website: "https://www.2vinezjupiter.com",
-    mapUrl: "https://maps.google.com/?q=287+E+Indiantown+Rd+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=2+Vinez%2C+287+E+Indiantown+Rd%2C+Ste+B2%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://cdn.res-discover.com/2-vinez/15482-albums-4.jpg",
       "https://cdn.res-discover.com/2-vinez/15482-albums-5.jpg",
@@ -445,7 +445,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 623-0916",
     website: "https://niekosneighborhood.com",
-    mapUrl: "https://maps.google.com/?q=1153+Town+Center+Dr+Jupiter+FL+33458",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Nieko's+Neighborhood+Bar%2C+1153+Town+Center+Dr%2C+Ste+101%2C+Jupiter%2C+FL+33458",
     photoUrls: [
       "https://tfc-uwc.s3.amazonaws.com/Nieko%27s_Neighborhood_Bar_pAWaYI371d_Niekos-Jupiter-New1stPic.jpg",
       "https://tfc-uwc.s3.amazonaws.com/Nieko%27s_Neighborhood_Bar_ktQYDkllEr_Niekos-Neighbothood-Bar-Jupiter-201.jpg",
@@ -461,8 +461,8 @@ const restaurants: Restaurant[] = [
     tagline: "Mexican and Tex-Mex fare with margaritas on West Indiantown Road.",
     address: "4177 W Indiantown Rd, Jupiter, FL 33478",
     location: {
-      lat: 26.9345451,
-      lon: -80.1370275,
+      lat: 26.9356929,
+      lon: -80.1594067,
     },
     neighborhood: "Jupiter Farms",
     priceTier: "$$",
@@ -472,7 +472,7 @@ const restaurants: Restaurant[] = [
     hours: ["Mon-Sun: 11:00 AM - 10:00 PM"],
     phone: "(561) 781-3772",
     website: "https://casatequila.us",
-    mapUrl: "https://maps.google.com/?q=4177+W+Indiantown+Rd+Jupiter+FL+33478",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Casa+Tequila%2C+4177+W+Indiantown+Rd%2C+Jupiter%2C+FL+33478",
     photoUrls: [
       "https://casatequila.us/order/images/casajupiter2.jpg",
       "https://casatequila.us/order/images/casajupiter1.jpg",
@@ -503,7 +503,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 406-5057",
     website: "https://www.brassringpubfl.com/jup",
-    mapUrl: "https://maps.google.com/?q=1150+W+Indiantown+Rd+Jupiter+FL+33458",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Brass+Ring+Pub%2C+1150+W+Indiantown+Rd%2C+Jupiter%2C+FL+33458",
     photoUrls: [
       "https://static.wixstatic.com/media/be8e01_febf8aad46ef49c599ad00dc029f70b0~mv2.jpg",
       "https://static.wixstatic.com/media/be8e01_02758af6f9b44e9e815c8a204b92d383~mv2.jpg",
@@ -535,7 +535,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 489-7869",
     website: "https://calaverascantina.com/jupiter/",
-    mapUrl: "https://maps.google.com/?q=125+Dockside+Cir+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Calaveras+Cantina%2C+125+Dockside+Cir%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://calaverascantina.com/wp-content/uploads/2024/08/02-LUX6028-3-3-scaled.jpg",
       "https://calaverascantina.com/wp-content/uploads/2023/08/05-LUX6038-3.jpg",
@@ -567,7 +567,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 768-9533",
     website: "https://delpestojupiter.com",
-    mapUrl: "https://maps.google.com/?q=201+N+US+Highway+1+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Del+Pesto%2C+201+N+US+Highway+1%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://delpestojupiter.com/assets/hero-main-BcqW7VgH.jpg",
       "https://delpestojupiter.com/assets/delpesto-sign-C_yKhnMF.jpg",
@@ -597,7 +597,7 @@ const restaurants: Restaurant[] = [
     ],
     phone: "(561) 406-2188",
     website: "https://thetwistedtuna.com/jupiter/",
-    mapUrl: "https://maps.google.com/?q=353+S+US+Highway+1+Jupiter+FL+33477",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=The+Twisted+Tuna%2C+353+S+US+Highway+1%2C+Jupiter%2C+FL+33477",
     photoUrls: [
       "https://thetwistedtuna.com/wp-content/uploads/2025/01/twisted-tuna-sushi-sunday-special.jpg",
       "https://thetwistedtuna.com/wp-content/uploads/2025/01/twisted-tuna-happy-hour-special.jpg",
@@ -606,6 +606,100 @@ const restaurants: Restaurant[] = [
     featured: false,
     dietaryOptions: ["Gluten-Sensitive Options"],
     lastVerified: "2026-08-02",
+  },
+  {
+    slug: "arthur-and-sons-ny-italian",
+    name: "Arthur & Sons NY Italian",
+    tagline: "Chef Joe Isidori's nostalgic red-sauce classics at Bluffs Square.",
+    address: "4050 US Highway 1 S, Ste 307, Jupiter, FL 33477",
+    location: {
+      lat: 26.8952187,
+      lon: -80.061709,
+    },
+    neighborhood: "South Jupiter",
+    priceTier: "$$$",
+    cuisines: ["Italian", "American"],
+    description:
+      "Chef Joe Isidori's Florida outpost of his New York red-sauce Italian restaurant, serving nostalgic classics like spicy rigatoni alla vodka, chicken parmesan, and spumoni in the Bluffs Square Shoppes.",
+    hours: [
+      "Mon-Thu: 4:00 PM - 10:00 PM",
+      "Fri-Sat: 4:00 PM - 11:00 PM",
+      "Sun: 4:00 PM - 10:00 PM",
+    ],
+    phone: "(561) 335-3715",
+    website: "https://arthurandsonsnyc.com/pages/jupiter",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Arthur+%26+Sons+NY+Italian%2C+4050+US+Highway+1+S%2C+Ste+307%2C+Jupiter%2C+FL+33477",
+    photoUrls: [
+      "https://arthurandsonsnyc.com/cdn/shop/files/RH-11.26.25_0044-1.jpg",
+      "https://arthurandsonsnyc.com/cdn/shop/files/SPICY-RIGATONI-ALLA-VODKA-_1.jpg",
+      "https://arthurandsonsnyc.com/cdn/shop/files/BURRATA-1.jpg",
+    ],
+    featured: true,
+    dietaryOptions: ["Gluten-Sensitive Options"],
+    lastVerified: "2026-08-03",
+  },
+  {
+    slug: "hap-and-hooch",
+    name: "Hap & Hooch",
+    tagline: "Scratch-kitchen smashburgers and wings with a serious cocktail program.",
+    address: "4050 US Highway 1 S, Unit 309, Jupiter, FL 33477",
+    location: {
+      lat: 26.8952187,
+      lon: -80.061709,
+    },
+    neighborhood: "South Jupiter",
+    priceTier: "$$",
+    cuisines: ["American"],
+    description:
+      "A scratch-kitchen bar and grill in Bluffs Square Shoppes known for smashburgers, wings, and comfort-food classics, backed by an outstanding cocktail program and daily happy hour.",
+    hours: [
+      "Mon: Closed",
+      "Tue-Thu: 3:00 PM - 10:00 PM",
+      "Fri-Sat: 12:00 PM - 10:00 PM",
+      "Sun: 12:00 PM - 8:00 PM",
+    ],
+    phone: "(561) 320-1182",
+    website: "https://www.hapandhooch.com",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Hap+%26+Hooch%2C+4050+US+Highway+1+S%2C+Unit+309%2C+Jupiter%2C+FL+33477",
+    photoUrls: [
+      "https://images.squarespace-cdn.com/content/v1/6837911665f29b77a6240414/f910b444-2eb3-45df-a17b-37b1397ac757/Burger.JPG",
+      "https://images.squarespace-cdn.com/content/v1/6837911665f29b77a6240414/bca58c98-af91-4c06-ad5c-010f842a0010/Nachos.jpg",
+      "https://images.squarespace-cdn.com/content/v1/6837911665f29b77a6240414/a3b1e339-2583-474e-989a-981eb8e738bb/Wisconsin+Cheese+Curds.jpg",
+    ],
+    featured: false,
+    dietaryOptions: ["Vegetarian Options"],
+    lastVerified: "2026-08-03",
+  },
+  {
+    slug: "thirsty-turtle-seagrill",
+    name: "Thirsty Turtle Seagrill",
+    tagline: "Fresh seafood, wings, and craft beer just south of Jupiter in Juno Beach.",
+    address: "13981 US Highway 1, Juno Beach, FL 33408",
+    location: {
+      lat: 26.881149,
+      lon: -80.0573668,
+    },
+    neighborhood: "Juno Beach",
+    priceTier: "$$",
+    cuisines: ["Seafood", "American"],
+    description:
+      "A sports-bar seafood grill just south of Jupiter serving coconut shrimp salad, firecracker shrimp tacos, and award-winning wings, with a rotating craft beer list and outdoor seating.",
+    hours: [
+      "Mon-Thu: 11:30 AM - 10:00 PM",
+      "Fri-Sat: 11:30 AM - 11:00 PM",
+      "Sun: 12:00 PM - 10:00 PM",
+    ],
+    phone: "(561) 627-8991",
+    website: "https://thirstyturtlefl.com/juno-beach/",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Thirsty+Turtle+Seagrill%2C+13981+US+Highway+1%2C+Juno+Beach%2C+FL+33408",
+    photoUrls: [
+      "https://thirstyturtlefl.com/wp-content/uploads/2024/04/ThirtstyTurtle_CoconutShrimpSalad_2880x2304.jpg",
+      "https://thirstyturtlefl.com/wp-content/uploads/2024/04/ThirtstyTurtle_FirecrackerShrimpTacos_2880x2304.jpg",
+      "https://thirstyturtlefl.com/wp-content/uploads/2024/04/ThirtstyTurtle_Award_Winning_Chicken_Wings-1024x819.jpg",
+    ],
+    featured: false,
+    dietaryOptions: ["Gluten-Sensitive Options"],
+    lastVerified: "2026-08-03",
   },
 ];
 
