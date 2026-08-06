@@ -13,9 +13,9 @@ import {
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "All Jupiter Restaurants",
+  title: "All Area Restaurants",
   description:
-    "Browse and filter every Jupiter, Florida restaurant listing by neighborhood, cuisine, and price.",
+    "Browse and filter every Jupiter-area restaurant listing by neighborhood, cuisine, and price.",
   alternates: { canonical: `${SITE_URL}/restaurants` },
 };
 
@@ -66,7 +66,7 @@ export default async function RestaurantsPage({ searchParams }: RestaurantsPageP
 
       <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
         <section className="glass-card rounded-3xl p-6 sm:p-8">
-          <h1 className="display-title text-4xl text-teal-900 sm:text-5xl">All Jupiter Dining Options</h1>
+          <h1 className="display-title text-4xl text-teal-900 sm:text-5xl">All Area Dining Options</h1>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700 sm:text-base">
             Filter by neighborhood, cuisine, and price tier. This is the first implementation pass
             and will expand to full city coverage.

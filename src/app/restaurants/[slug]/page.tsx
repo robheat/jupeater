@@ -15,6 +15,11 @@ type RestaurantDetailPageProps = {
   searchParams: Promise<{ review?: string; message?: string }>;
 };
 
+function getAddressLocality(address: string): string {
+  const match = address.match(/,\s*([^,]+),\s*FL\s+\d{5}(?:-\d{4})?$/i);
+  return match?.[1]?.trim() || "Jupiter";
+}
+
 export function generateStaticParams() {
   return getRestaurants().map((restaurant) => ({ slug: restaurant.slug }));
 }
@@ -82,7 +87,7 @@ export default async function RestaurantDetailPage({
     address: {
       "@type": "PostalAddress",
       streetAddress: restaurant.address,
-      addressLocality: "Jupiter",
+      addressLocality: getAddressLocality(restaurant.address),
       addressRegion: "FL",
     },
     geo: {
@@ -172,7 +177,7 @@ export default async function RestaurantDetailPage({
             <div className="relative mt-6 h-64 w-full overflow-hidden rounded-2xl border border-teal-900/15 sm:h-80">
               <Image
                 src={restaurant.photoUrls[0]}
-                alt={`${restaurant.name} in ${restaurant.neighborhood}, Jupiter FL`}
+                alt={`${restaurant.name} in ${restaurant.neighborhood}, FL`}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 768px"

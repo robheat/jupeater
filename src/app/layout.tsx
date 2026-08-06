@@ -16,7 +16,7 @@ const sansFont = Sora({
   subsets: ["latin"],
 });
 
-const defaultTitle = `${SITE_NAME} | Jupiter Dining Guide`;
+const defaultTitle = `${SITE_NAME} | Jupiter Area Dining Guide`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

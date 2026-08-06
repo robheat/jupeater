@@ -6,7 +6,7 @@ import { getRestaurants } from "@/lib/restaurants";
 
 export const metadata: Metadata = {
   title: "Map View",
-  description: "See every Jupiter, Florida restaurant listing plotted on an interactive map.",
+  description: "See every Jupiter-area restaurant listing plotted on an interactive map.",
 };
 
 export default function MapPage() {
@@ -23,8 +23,8 @@ export default function MapPage() {
         <section className="glass-card rounded-3xl p-6 sm:p-8">
           <h1 className="display-title text-4xl text-teal-900 sm:text-5xl">Map View</h1>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700 sm:text-base">
-            Every current listing is plotted on an interactive Jupiter map. Pan, zoom, or tap a pin
-            for directions.
+            Every current listing is plotted on an interactive Jupiter-area map. Pan, zoom, or tap a
+            pin for directions.
           </p>
 
           <div className="relative mt-6 overflow-hidden rounded-3xl border border-teal-900/20 bg-[#eff7f2] shadow-[0_18px_50px_rgba(8,57,66,0.12)]">

@@ -5,7 +5,7 @@ import { submitRestaurantListing } from "@/app/submit/actions";
 
 export const metadata: Metadata = {
   title: "Submit a Listing",
-  description: "Submit or update a Jupiter, Florida restaurant listing for review.",
+  description: "Submit or update a Jupiter-area restaurant listing for review.",
 };
 
 type SubmitPageProps = {
@@ -25,7 +25,7 @@ export default async function SubmitPage({ searchParams }: SubmitPageProps) {
             Owner Tools
           </p>
           <h1 className="display-title mt-3 text-4xl text-teal-900 sm:text-5xl">
-            Submit or update a Jupiter restaurant listing
+            Submit or update a Jupiter-area restaurant listing
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:text-base">
             This UI is now wired and will be connected next to a moderated backend workflow.
@@ -75,7 +75,7 @@ export default async function SubmitPage({ searchParams }: SubmitPageProps) {
               Address
               <input
                 name="address"
-                placeholder="Street address in Jupiter, FL"
+                placeholder="Street address in Jupiter, Tequesta, Juno Beach, or Palm Beach Gardens, FL"
                 required
                 className="rounded-xl border border-teal-900/20 bg-white px-3 py-2 text-sm outline-none ring-teal-700/50 focus:ring"
               />

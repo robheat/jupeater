@@ -23,15 +23,38 @@ export default function Home() {
           <div className="pointer-events-none absolute -bottom-10 -left-8 h-32 w-32 rounded-full bg-[var(--teal-700)]/20 blur-2xl" />
 
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-700">
-            Jupiter, Florida Dining Guide
+            Jupiter Area Dining Guide
           </p>
           <h1 className="display-title mt-3 max-w-3xl text-5xl leading-tight text-teal-900 sm:text-6xl">
-            Find the right table in Jupiter, from laid-back docks to elevated nights out.
+            Find the best restaurants in Jupiter, Tequesta, Juno Beach, and Palm Beach Gardens.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-700 sm:text-lg">
-            Jupeater spotlights where locals and visitors eat in Jupiter. Browse by cuisine,
-            neighborhood, and budget, then open each profile for details and directions.
+            Jupeater is a local dining guide for Jupiter-area restaurants, including waterfront
+            dining, date-night spots, casual lunch options, and family-friendly favorites across
+            Jupiter, Tequesta, Juno Beach, and Palm Beach Gardens. Browse by cuisine, neighborhood,
+            and price, then open each listing for hours, maps, and directions.
           </p>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            <Link
+              href="/categories/waterfront-dining-jupiter-fl"
+              className="rounded-full border border-teal-900/20 bg-white/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-teal-900"
+            >
+              Waterfront Dining in Jupiter FL
+            </Link>
+            <Link
+              href="/categories/best-seafood-restaurants-jupiter-fl"
+              className="rounded-full border border-teal-900/20 bg-white/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-teal-900"
+            >
+              Best Seafood Restaurants in Jupiter FL
+            </Link>
+            <Link
+              href="/categories/date-night-restaurants-jupiter-fl"
+              className="rounded-full border border-teal-900/20 bg-white/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-teal-900"
+            >
+              Date Night Restaurants in Jupiter FL
+            </Link>
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
