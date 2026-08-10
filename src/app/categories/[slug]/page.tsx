@@ -98,8 +98,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             {restaurants.length} listing{restaurants.length === 1 ? "" : "s"} found
           </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {restaurants.map((restaurant) => (
-              <RestaurantCard key={restaurant.slug} restaurant={restaurant} />
+            {restaurants.map((restaurant, index) => (
+              <RestaurantCard key={restaurant.slug} restaurant={restaurant} priority={index < 3} />
             ))}
           </div>
         </section>

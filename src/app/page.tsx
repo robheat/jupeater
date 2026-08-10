@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 import { RestaurantCard } from "@/components/restaurant-card";
 import { SiteHeader } from "@/components/site-header";
+import { getRestaurantCategories } from "@/lib/restaurant-categories";
 import { getFeaturedRestaurants } from "@/lib/restaurants";
 import { SITE_URL } from "@/lib/site";
 
@@ -10,8 +11,13 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
 };
 
+const HOMEPAGE_CATEGORY_LIMIT = 8;
+
 export default function Home() {
   const featuredRestaurants = getFeaturedRestaurants();
+  const categories = getRestaurantCategories();
+  const homepageCategories = categories.slice(0, HOMEPAGE_CATEGORY_LIMIT);
+  const hasMoreCategories = categories.length > HOMEPAGE_CATEGORY_LIMIT;
 
   return (
     <div className="page-shell min-h-screen">
@@ -36,24 +42,23 @@ export default function Home() {
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
-            <Link
-              href="/categories/waterfront-dining-jupiter-fl"
-              className="rounded-full border border-teal-900/20 bg-white/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-teal-900"
-            >
-              Waterfront Dining in Jupiter FL
-            </Link>
-            <Link
-              href="/categories/best-seafood-restaurants-jupiter-fl"
-              className="rounded-full border border-teal-900/20 bg-white/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-teal-900"
-            >
-              Best Seafood Restaurants in Jupiter FL
-            </Link>
-            <Link
-              href="/categories/date-night-restaurants-jupiter-fl"
-              className="rounded-full border border-teal-900/20 bg-white/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-teal-900"
-            >
-              Date Night Restaurants in Jupiter FL
-            </Link>
+            {homepageCategories.map((category) => (
+              <Link
+                key={category.slug}
+                href={`/categories/${category.slug}`}
+                className="rounded-full border border-teal-900/20 bg-white/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-teal-900"
+              >
+                {category.keyword}
+              </Link>
+            ))}
+            {hasMoreCategories && (
+              <Link
+                href="/categories"
+                className="rounded-full border border-teal-900/20 bg-white/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-teal-900"
+              >
+                View All Categories
+              </Link>
+            )}
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -86,8 +91,8 @@ export default function Home() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredRestaurants.map((restaurant) => (
-              <RestaurantCard key={restaurant.slug} restaurant={restaurant} />
+            {featuredRestaurants.map((restaurant, index) => (
+              <RestaurantCard key={restaurant.slug} restaurant={restaurant} priority={index < 3} />
             ))}
           </div>
         </section>

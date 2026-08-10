@@ -6,6 +6,7 @@ const navLinks = [
   { href: "/restaurants", label: "Restaurants" },
   { href: "/categories", label: "Categories" },
   { href: "/map", label: "Map" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export function SiteHeader() {

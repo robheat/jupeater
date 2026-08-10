@@ -4,10 +4,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { submitRestaurantReview } from "@/app/restaurants/[slug]/actions";
+import { RestaurantCard } from "@/components/restaurant-card";
 import { SiteHeader } from "@/components/site-header";
 import { getPublishedReviews } from "@/lib/backend";
 import { parseOpeningHours } from "@/lib/hours";
-import { getRestaurantBySlug, getRestaurants } from "@/lib/restaurants";
+import { getRelatedRestaurants, getRestaurantBySlug, getRestaurants } from "@/lib/restaurants";
 import { SITE_URL } from "@/lib/site";
 
 type RestaurantDetailPageProps = {
@@ -18,6 +19,11 @@ type RestaurantDetailPageProps = {
 function getAddressLocality(address: string): string {
   const match = address.match(/,\s*([^,]+),\s*FL\s+\d{5}(?:-\d{4})?$/i);
   return match?.[1]?.trim() || "Jupiter";
+}
+
+function getAddressPostalCode(address: string): string | undefined {
+  const match = address.match(/(\d{5})(?:-\d{4})?$/);
+  return match?.[1];
 }
 
 export function generateStaticParams() {
@@ -71,6 +77,7 @@ export default async function RestaurantDetailPage({
   }
 
   const publishedReviews = await getPublishedReviews(slug);
+  const relatedRestaurants = getRelatedRestaurants(restaurant);
 
   const averageRating =
     publishedReviews.length > 0
@@ -89,12 +96,14 @@ export default async function RestaurantDetailPage({
       streetAddress: restaurant.address,
       addressLocality: getAddressLocality(restaurant.address),
       addressRegion: "FL",
+      postalCode: getAddressPostalCode(restaurant.address),
     },
     geo: {
       "@type": "GeoCoordinates",
       latitude: restaurant.location.lat,
       longitude: restaurant.location.lon,
     },
+    hasMap: restaurant.mapUrl,
     telephone: restaurant.phone,
     url: restaurant.website,
     priceRange: restaurant.priceTier,
@@ -203,7 +212,7 @@ export default async function RestaurantDetailPage({
                   >
                     <Image
                       src={url}
-                      alt={`${restaurant.name} photo ${index + 1}`}
+                      alt={`${restaurant.name} in ${restaurant.neighborhood}, FL - photo ${index + 1}`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition duration-300 group-hover:scale-[1.03]"
@@ -257,6 +266,19 @@ export default async function RestaurantDetailPage({
             Last verified: {restaurant.lastVerified}. Hours can change for holidays and seasonal
             events.
           </p>
+
+          {relatedRestaurants.length > 0 && (
+            <div className="mt-8">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-teal-700">
+                More in {restaurant.neighborhood}
+              </h2>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {relatedRestaurants.map((related) => (
+                  <RestaurantCard key={related.slug} restaurant={related} />
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="mt-8 rounded-2xl border border-teal-900/15 bg-white/80 p-4">
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-teal-700">

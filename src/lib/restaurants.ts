@@ -12,6 +12,8 @@ export type Restaurant = {
   neighborhood: string;
   priceTier: PriceTier;
   cuisines: string[];
+  waterfront?: boolean;
+  dogFriendly?: boolean;
   description: string;
   hours: string[];
   phone: string;
@@ -36,6 +38,7 @@ const restaurants: Restaurant[] = [
     neighborhood: "Jupiter Inlet",
     priceTier: "$$",
     cuisines: ["Seafood", "Caribbean", "American"],
+    waterfront: true,
     description:
       "A fully open-air waterfront restaurant and bar under woven tiki huts and banyan trees, founded in 2004 by local surfers. Serves Florida-sourced seafood and tropical fare, with live music on its tiki stage and a Sunday brunch.",
     hours: [
@@ -68,6 +71,8 @@ const restaurants: Restaurant[] = [
     neighborhood: "Jupiter Inlet",
     priceTier: "$$",
     cuisines: ["Seafood", "American"],
+    waterfront: true,
+    dogFriendly: true,
     description:
       "A casual, open-air waterfront restaurant and bar at Jupiter Inlet Marina with sandy beach seating and views of the Jupiter Lighthouse. Known for a laid-back tiki-bar vibe, Caribbean-influenced seafood menu, and happy hour.",
     hours: [
@@ -130,6 +135,8 @@ const restaurants: Restaurant[] = [
     neighborhood: "Jupiter Inlet",
     priceTier: "$$$",
     cuisines: ["Seafood", "Steakhouse", "American"],
+    waterfront: true,
+    dogFriendly: true,
     description:
       "A three-decade fixture on the Jupiter Inlet Waterway serving seafood and Certified Angus steaks, with a lighthouse view, full bar, and Sunday brunch.",
     hours: [
@@ -283,6 +290,7 @@ const restaurants: Restaurant[] = [
     neighborhood: "Harbourside",
     priceTier: "$$$",
     cuisines: ["Steakhouse", "American", "Seafood"],
+    waterfront: true,
     description:
       "Part of the national Ruth's Chris chain, this location opened in June 2024 at Harbourside Place in Jupiter. Serves USDA Prime steaks broiled and finished on a 500-degree plate, plus seafood and a full wine list.",
     hours: [
@@ -344,6 +352,8 @@ const restaurants: Restaurant[] = [
     neighborhood: "Central Jupiter",
     priceTier: "$$",
     cuisines: ["Sushi", "Seafood", "American"],
+    waterfront: true,
+    dogFriendly: true,
     description:
       "A waterfront sushi bar and seafood restaurant overlooking the Jupiter Yacht Club Marina along the Riverwalk, known for creative rolls, a raw oyster bar, and an aquarium-lined indoor bar that stays open late.",
     hours: [
@@ -374,6 +384,8 @@ const restaurants: Restaurant[] = [
     neighborhood: "Central Jupiter",
     priceTier: "$$",
     cuisines: ["Seafood", "American", "Caribbean"],
+    waterfront: true,
+    dogFriendly: true,
     description:
       "Zunzibar's first Florida location serves chef-driven coastal plates — Peruvian chicken skewers, snow crab with Cajun butter, blackened mahi with mango slaw — alongside curated cocktails on an outdoor patio, with daily happy hour from 4-7 PM.",
     hours: [
@@ -525,6 +537,8 @@ const restaurants: Restaurant[] = [
     neighborhood: "Harbourside",
     priceTier: "$$",
     cuisines: ["Mexican"],
+    waterfront: true,
+    dogFriendly: true,
     description:
       "Part of a South Florida group of upscale Mexican restaurants, Calaveras Cantina serves modern Mexican cuisine and craft cocktails at Harbourside Place, with patio seating overlooking the Jupiter Intracoastal.",
     hours: [
@@ -588,6 +602,7 @@ const restaurants: Restaurant[] = [
     neighborhood: "Central Jupiter",
     priceTier: "$$",
     cuisines: ["Seafood", "Sushi", "American"],
+    dogFriendly: true,
     description:
       "A bar and grill on US-1 serving sushi, seafood, and bar bites, known for daily specials like Taco Tuesday and Sushi Sunday plus a weekend brunch menu.",
     hours: [
@@ -682,6 +697,7 @@ const restaurants: Restaurant[] = [
     neighborhood: "Juno Beach",
     priceTier: "$$",
     cuisines: ["Seafood", "American"],
+    dogFriendly: true,
     description:
       "A sports-bar seafood grill just south of Jupiter serving coconut shrimp salad, firecracker shrimp tacos, and award-winning wings, with a rotating craft beer list and outdoor seating.",
     hours: [
@@ -721,9 +737,13 @@ const restaurants: Restaurant[] = [
       "Sun: 4:00 PM - 9:00 PM",
     ],
     phone: "(561) 406-5193",
-    website: "https://www.hogsnappersshack.com",
+    website: "https://www.hogsnappersshackandsushi.com",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Hog+Snappers+Shack+%26+Sushi%2C+900+N+US+Highway+1%2C+Tequesta%2C+FL+33469",
-    photoUrls: [],
+    photoUrls: [
+      "https://static.wixstatic.com/media/227056_161866b5862a4163994f6f875e869af2~mv2.jpg/v1/fill/w_972,h_600,al_c,q_80,enc_avif,quality_auto/227056_161866b5862a4163994f6f875e869af2~mv2.jpg",
+      "https://static.wixstatic.com/media/227056_c124746da1b4473a9aee0f964b8b29da~mv2.jpg/v1/fill/w_972,h_600,al_c,q_80,enc_avif,quality_auto/227056_c124746da1b4473a9aee0f964b8b29da~mv2.jpg",
+      "https://static.wixstatic.com/media/227056_b6235b57f8ac4e9d8e9661798f113aad~mv2.jpg/v1/fill/w_972,h_600,al_c,q_80,enc_avif,quality_auto/227056_b6235b57f8ac4e9d8e9661798f113aad~mv2.jpg",
+    ],
     featured: false,
     dietaryOptions: ["Gluten-Sensitive Options"],
     lastVerified: "2026-08-06",
@@ -732,7 +752,7 @@ const restaurants: Restaurant[] = [
     slug: "evo-italian-tequesta",
     name: "Evo Italian",
     tagline: "Wood-fired pizza, house-made pasta, and modern Italian plates in Tequesta.",
-    address: "4900 US Highway 1, Tequesta, FL 33469",
+    address: "150 N US Highway 1, Ste 11-13, Tequesta, FL 33469",
     location: {
       lat: 26.9616088,
       lon: -80.0889036,
@@ -748,9 +768,13 @@ const restaurants: Restaurant[] = [
       "Sun: 11:30 AM - 9:00 PM",
     ],
     phone: "(561) 203-9945",
-    website: "https://www.evotequesta.com",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Evo+Italian%2C+4900+US+Highway+1%2C+Tequesta%2C+FL+33469",
-    photoUrls: [],
+    website: "https://evoitalian.com",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Evo+Italian%2C+150+N+US+Highway+1%2C+Tequesta%2C+FL+33469",
+    photoUrls: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/7c/91/62/filetto-gorgonzola.jpg?w=1200&h=800&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/34/40/ad/caption.jpg?w=1200&h=800&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/86/0d/fb/ground-veal-beef-and.jpg?w=1200&h=800&s=1",
+    ],
     featured: false,
     dietaryOptions: ["Vegetarian Options"],
     lastVerified: "2026-08-06",
@@ -775,9 +799,13 @@ const restaurants: Restaurant[] = [
       "Sun: 11:30 AM - 9:00 PM",
     ],
     phone: "(561) 626-1700",
-    website: "https://captaincharliesreefgrill.com",
+    website: "https://www.captaincharliesreefgrillfl.com",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Captain+Charlie's+Reef+Grill%2C+12846+US+Highway+1%2C+Juno+Beach%2C+FL+33408",
-    photoUrls: [],
+    photoUrls: [
+      "https://www.captaincharliesreefgrillfl.com/assets/img_2464-BzovOB2P.jpg",
+      "https://www.captaincharliesreefgrillfl.com/assets/img_2476-YvbpSVd3.jpg",
+      "https://www.captaincharliesreefgrillfl.com/assets/img_4684-DZLKKwCh.jpg",
+    ],
     featured: false,
     dietaryOptions: ["Gluten-Sensitive Options"],
     lastVerified: "2026-08-06",
@@ -802,9 +830,13 @@ const restaurants: Restaurant[] = [
       "Sun: Closed",
     ],
     phone: "(561) 249-6760",
-    website: "https://www.coolinarycafe.com",
+    website: "https://thecoolpig.com",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Coolinary+Cafe%2C+4580+PGA+Blvd%2C+Palm+Beach+Gardens%2C+FL+33418",
-    photoUrls: [],
+    photoUrls: [
+      "https://images.squarespace-cdn.com/content/v1/65c65d2617f84d530785ebe6/765a03de-06ba-4d7e-8e18-b59a06dffed8/CoolinaryParchedPig_Image_home-01.jpg",
+      "https://images.squarespace-cdn.com/content/v1/65c65d2617f84d530785ebe6/51401952-0eb5-4489-afb1-7daacf537ffb/CoolinaryParchedPig_Image_home-02.jpg",
+      "https://images.squarespace-cdn.com/content/v1/65c65d2617f84d530785ebe6/55fd3d4a-f319-4806-aa93-1ca7e488ae3b/CoolinaryParchedPig_Image_menu.jpg",
+    ],
     featured: false,
     dietaryOptions: ["Vegetarian Options", "Gluten-Sensitive Options"],
     lastVerified: "2026-08-06",
@@ -829,12 +861,262 @@ const restaurants: Restaurant[] = [
       "Sun: 5:00 PM - 9:00 PM",
     ],
     phone: "(561) 408-3685",
-    website: "https://www.stagepbg.com",
+    website: "https://www.stagekitchenandbar.com/location/stage-pga/",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Stage+Kitchen+%26+Bar%2C+2000+PGA+Blvd%2C+Ste+5506%2C+Palm+Beach+Gardens%2C+FL+33408",
-    photoUrls: [],
+    photoUrls: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/ce/09/26/inside-design.jpg?w=1200&h=800&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/06/3e/0c/garden-root-vegetable.jpg?w=1200&h=800&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/06/3d/0e/charcuterie-platter-with.jpg?w=1200&h=800&s=1",
+    ],
     featured: false,
     dietaryOptions: ["Vegetarian Options", "Gluten-Sensitive Options"],
     lastVerified: "2026-08-06",
+  },
+  {
+    slug: "lucky-shuck",
+    name: "Lucky Shuck",
+    tagline: "Waterfront oyster bar and seafood shack with a dockside patio on the Jupiter Inlet.",
+    address: "1116 Love St, Jupiter, FL 33477",
+    location: {
+      lat: 26.9456741,
+      lon: -80.0819569,
+    },
+    neighborhood: "Jupiter Inlet",
+    priceTier: "$$",
+    cuisines: ["Seafood", "American"],
+    waterfront: true,
+    dogFriendly: true,
+    description:
+      "A casual waterfront restaurant and raw bar on Love Street near the Jupiter Inlet, partnering with local fishermen for daily-caught seafood, freshly shucked oysters, and hand-rolled sushi. The dockside patio and lawn area draw families and boaters alike for happy hour and sunset views.",
+    hours: [
+      "Mon-Thu: 11:30 AM - 9:00 PM",
+      "Fri-Sat: 11:30 AM - 10:00 PM",
+      "Sun: 11:30 AM - 9:00 PM",
+    ],
+    phone: "(561) 532-3331",
+    website: "https://www.luckyshuckjupiter.com",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Lucky+Shuck%2C+1116+Love+St%2C+Jupiter%2C+FL+33477",
+    photoUrls: [
+      "https://images.getbento.com/accounts/12db1d42ec807dcf9b60ce4df8cdecb7/media/images/LuckyShuck_HoldMyBeer.jpg",
+      "https://images.getbento.com/accounts/12db1d42ec807dcf9b60ce4df8cdecb7/media/images/LuckyShuck_Oyster.jpg",
+      "https://images.getbento.com/accounts/12db1d42ec807dcf9b60ce4df8cdecb7/media/images/LuckyShuck_Cocktail.jpg",
+    ],
+    featured: false,
+    dietaryOptions: ["Gluten-Sensitive Options"],
+    lastVerified: "2026-08-10",
+  },
+  {
+    slug: "dune-dog-cafe",
+    name: "Dune Dog Cafe",
+    tagline: "Casual beachside cafe known for hot dogs, fish sandwiches, and family-friendly dining near Jupiter Beach.",
+    address: "775 N Alt Highway A1A, Jupiter, FL 33477",
+    location: {
+      lat: 26.9407482,
+      lon: -80.0930825,
+    },
+    neighborhood: "Jupiter Inlet",
+    priceTier: "$",
+    cuisines: ["American", "Seafood"],
+    description:
+      "A longtime Jupiter Beach favorite for casual, affordable eats - gourmet hot dogs, the Original Crispy Fish Sandwich, burgers, and onion rings - just off Alternate A1A. Casual counter service and a laid-back patio make it a go-to for families after the beach.",
+    hours: [
+      "Mon-Thu: 11:00 AM - 9:00 PM",
+      "Fri-Sat: 11:00 AM - 10:00 PM",
+      "Sun: 11:00 AM - 9:00 PM",
+    ],
+    phone: "(561) 744-6667",
+    website: "https://dunedog.com/jupiter-fl/",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Dune+Dog+Cafe%2C+775+N+Alt+Highway+A1A%2C+Jupiter%2C+FL+33477",
+    photoUrls: [
+      "https://dunedog.com/assets/photos/jupiter/jupiter.jpg",
+      "https://dunedog.com/assets/photos/food/food1.jpg",
+      "https://dunedog.com/assets/photos/food/food3.jpg",
+    ],
+    featured: false,
+    dietaryOptions: ["Gluten-Sensitive Options"],
+    lastVerified: "2026-08-10",
+  },
+  {
+    slug: "lewis-steakhouse",
+    name: "Lewis Steakhouse",
+    tagline: "Upscale steakhouse from the Okeechobee Prime family serving dry-aged cuts and craft cocktails in West Jupiter.",
+    address: "6390 W Indiantown Rd, Ste 59, Jupiter, FL 33458",
+    location: {
+      lat: 26.9338854,
+      lon: -80.1330848,
+    },
+    neighborhood: "West Jupiter",
+    priceTier: "$$$",
+    cuisines: ["Steakhouse", "American", "Seafood"],
+    description:
+      "Jupiter's newest locally owned steakhouse, part of the Okeechobee Prime restaurant group, serving USDA Prime dry-aged steaks, fresh seafood, and chef-driven small plates alongside an extensive whiskey and craft cocktail list. An elevated dining room and nightly happy hour make it a favorite for date night.",
+    hours: [
+      "Mon-Thu: 4:00 PM - 9:00 PM",
+      "Fri-Sat: 4:00 PM - 10:00 PM",
+      "Sun: 4:00 PM - 9:00 PM",
+    ],
+    phone: "(561) 277-9188",
+    website: "https://www.lewissteakhouse.com",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Lewis+Steakhouse%2C+6390+W+Indiantown+Rd%2C+Ste+59%2C+Jupiter%2C+FL+33458",
+    photoUrls: [
+      "https://www.lewissteakhouse.com/content/images/thumbs/0000058_surf-n-turf.jpeg",
+      "https://www.lewissteakhouse.com/content/images/thumbs/0000067_tomahawk.jpeg",
+      "https://www.lewissteakhouse.com/content/images/thumbs/0000078_crab-cake-entree.jpeg",
+    ],
+    featured: false,
+    dietaryOptions: ["Gluten-Sensitive Options"],
+    lastVerified: "2026-08-10",
+  },
+  {
+    slug: "blackbird-modern-asian",
+    name: "Blackbird Modern Asian",
+    tagline: "Chef-driven modern Asian small plates and craft cocktails in an elevated dining room near Tequesta.",
+    address: "1511 N Old Dixie Hwy, Jupiter, FL 33469",
+    location: {
+      lat: 26.9432457,
+      lon: -80.0938499,
+    },
+    neighborhood: "Tequesta",
+    priceTier: "$$$",
+    cuisines: ["Asian", "Sushi"],
+    description:
+      "A striking modern Asian restaurant near the Jupiter-Tequesta line, where a 12-foot golden Buddha and a color-changing cherry blossom tree set the scene for chef-driven dishes spanning Japan, Thailand, China, Korea, and Vietnam - from Chinese BBQ short ribs to bao buns and inventive sushi rolls. A polished, romantic atmosphere and craft cocktail program make it a top pick for date night.",
+    hours: [
+      "Mon-Thu: 4:00 PM - 10:00 PM",
+      "Fri-Sat: 4:00 PM - 11:00 PM",
+      "Sun: 4:00 PM - 10:00 PM",
+    ],
+    phone: "(561) 589-7505",
+    website: "https://www.blackbirdmodernasian.com",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Blackbird+Modern+Asian%2C+1511+N+Old+Dixie+Hwy%2C+Jupiter%2C+FL+33469",
+    photoUrls: [
+      "https://images.getbento.com/accounts/614949c1810e09f6eae4e906681ff71b/media/images/68138fl-blackbird-modern-asian-restaurant-jupiter-02.JPG",
+      "https://images.getbento.com/accounts/614949c1810e09f6eae4e906681ff71b/media/images/65701fl-blackbird-modern-asian-restaurant-jupiter-08.JPG",
+      "https://images.getbento.com/accounts/614949c1810e09f6eae4e906681ff71b/media/images/5181820220624-Capture0417.jpg",
+    ],
+    featured: false,
+    dietaryOptions: ["Vegetarian Options", "Gluten-Sensitive Options"],
+    lastVerified: "2026-08-10",
+  },
+  {
+    slug: "little-moirs-sweet-fish",
+    name: "Little Moir's Sweet Fish",
+    tagline: "A focused seafood menu from the Little Moir's family, casual and local in West Jupiter.",
+    address: "6390 W Indiantown Rd, Jupiter, FL 33458",
+    location: {
+      lat: 26.9338854,
+      lon: -80.1330848,
+    },
+    neighborhood: "West Jupiter",
+    priceTier: "$$",
+    cuisines: ["Seafood", "American"],
+    description:
+      "The Little Moir's family's newest concept on Indiantown Road, serving the same Florida-fresh seafood and casual hospitality as the original Food Shack in a fresh, focused space. Grilled octopus, blackened fish and grits, and craft cocktails headline a menu built for the way Jupiter eats, with a casual dining room and bar.",
+    hours: [
+      "Mon-Thu: 11:00 AM - 9:00 PM",
+      "Fri-Sat: 11:00 AM - 9:30 PM",
+      "Sun: Closed",
+    ],
+    phone: "(561) 730-4340",
+    website: "https://www.littlemoirssweetfish.com",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Little+Moir%27s+Sweet+Fish%2C+6390+W+Indiantown+Rd%2C+Jupiter%2C+FL+33458",
+    photoUrls: [
+      "https://www.littlemoirssweetfish.com/images/bar-dining-room.webp",
+      "https://www.littlemoirssweetfish.com/images/specialties/grilled-octopus.webp",
+      "https://www.littlemoirssweetfish.com/images/specialties/blackened-fish-and-grits.webp",
+    ],
+    featured: false,
+    dietaryOptions: ["Gluten-Sensitive Options"],
+    lastVerified: "2026-08-10",
+  },
+  {
+    slug: "kee-grill",
+    name: "Ke'e Grill",
+    tagline: "Longtime Juno Beach favorite for prime rib, fresh fish, and an old-Florida supper-club feel.",
+    address: "14020 US Highway 1, Juno Beach, FL 33408",
+    location: {
+      lat: 26.8822663,
+      lon: -80.0566108,
+    },
+    neighborhood: "Juno Beach",
+    priceTier: "$$$",
+    cuisines: ["Seafood", "Steakhouse", "American"],
+    description:
+      "A Juno Beach institution serving fresh local fish and jumbo prime rib with a classic, no-reservations supper-club atmosphere on US Highway 1. The wood-fired open kitchen and full bar make it a dependable choice for a special seafood dinner.",
+    hours: [
+      "Mon-Thu: 5:00 PM - 9:00 PM",
+      "Fri-Sat: 5:00 PM - 9:30 PM",
+      "Sun: 5:00 PM - 9:00 PM",
+    ],
+    phone: "(561) 776-1167",
+    website: "https://keegrilljunobeach.com",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Ke%27e+Grill%2C+14020+US+Highway+1%2C+Juno+Beach%2C+FL+33408",
+    photoUrls: [
+      "https://static.wixstatic.com/media/a93f3d_c06b5122d91a440d8c30322442c36396~mv2.jpg",
+      "https://static.wixstatic.com/media/a93f3d_c4632a7cbd354c358ab6ca0ecf73a5af~mv2.jpg",
+      "https://static.wixstatic.com/media/a93f3d_571b33adff894c63807143a690cbf225~mv2.jpg",
+    ],
+    featured: false,
+    dietaryOptions: ["Gluten-Sensitive Options"],
+    lastVerified: "2026-08-10",
+  },
+  {
+    slug: "eddie-vs-prime-seafood",
+    name: "Eddie V's Prime Seafood",
+    tagline: "Upscale prime steak and seafood with live music in the V Lounge, at Legacy Place in Palm Beach Gardens.",
+    address: "11330 Legacy Ave, Palm Beach Gardens, FL 33410",
+    location: {
+      lat: 26.8412755,
+      lon: -80.0915965,
+    },
+    neighborhood: "Palm Beach Gardens",
+    priceTier: "$$$",
+    cuisines: ["Seafood", "Steakhouse", "American"],
+    description:
+      "The Palm Beach Gardens location of the national Eddie V's chain, opened in April 2026 at Legacy Place, serving USDA Prime steaks, a raw oyster bar, and theatrical seafood preparations in an elegant, earth-toned dining room. The adjoining V Lounge features live music trios nightly, making it a polished choice for date night and celebrations.",
+    hours: [
+      "Mon-Thu: 4:00 PM - 9:00 PM",
+      "Fri-Sat: 4:00 PM - 10:00 PM",
+      "Sun: 4:00 PM - 9:00 PM",
+    ],
+    phone: "(561) 491-7199",
+    website: "https://www.eddiev.com/locations/all-locations",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Eddie+V%27s+Prime+Seafood%2C+11330+Legacy+Ave%2C+Palm+Beach+Gardens%2C+FL+33410",
+    photoUrls: ["/restaurants/eddie-vs-prime-seafood/eddie-vs-prime-seafood-1.jpg"],
+    featured: false,
+    dietaryOptions: ["Gluten-Sensitive Options"],
+    lastVerified: "2026-08-10",
+  },
+  {
+    slug: "voodoo-bayou",
+    name: "Voodoo Bayou",
+    tagline: "Lively Cajun kitchen and whiskey bar in Downtown at the Gardens with baked oysters and gumbo.",
+    address: "11701 Lake Victoria Gardens Ave, Ste 5095, Palm Beach Gardens, FL 33410",
+    location: {
+      lat: 26.8488693,
+      lon: -80.0940576,
+    },
+    neighborhood: "Palm Beach Gardens",
+    priceTier: "$$",
+    cuisines: ["Cajun", "American", "Seafood"],
+    dogFriendly: true,
+    description:
+      "A New Orleans-inspired Cajun kitchen and whiskey bar in Palm Beach Gardens' Downtown at the Gardens, known for baked garlic butter and Rockefeller oysters, gumbo ya ya, and a lively happy hour. The lounge-style bar area and patio seating make it a popular casual spot for groups and late-night bites.",
+    hours: [
+      "Mon-Thu: 11:30 AM - 11:00 PM",
+      "Fri-Sat: 11:00 AM - 1:00 AM",
+      "Sun: 11:00 AM - 10:00 PM",
+    ],
+    phone: "(561) 782-6344",
+    website: "https://voodoobayou.com/palmbeachgardens/",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Voodoo+Bayou%2C+11701+Lake+Victoria+Gardens+Ave%2C+Ste+5095%2C+Palm+Beach+Gardens%2C+FL+33410",
+    photoUrls: [
+      "https://voodoobayou.com/wp-content/uploads/2024/05/PBG-5-scaled-1.jpg",
+      "https://voodoobayou.com/wp-content/uploads/2020/06/gallery-header.jpg",
+    ],
+    featured: false,
+    dietaryOptions: ["Vegetarian Options", "Gluten-Sensitive Options"],
+    lastVerified: "2026-08-10",
   },
 ];
 
@@ -860,4 +1142,18 @@ export function getNeighborhoodOptions(): string[] {
   const neighborhoods = new Set<string>();
   restaurants.forEach((r) => neighborhoods.add(r.neighborhood));
   return Array.from(neighborhoods).sort();
+}
+
+export function getRelatedRestaurants(restaurant: Restaurant, limit = 3): Restaurant[] {
+  const scored = restaurants
+    .filter((r) => r.slug !== restaurant.slug)
+    .map((r) => {
+      const sharedCuisines = r.cuisines.filter((c) => restaurant.cuisines.includes(c)).length;
+      const sameNeighborhood = r.neighborhood === restaurant.neighborhood ? 10 : 0;
+      return { restaurant: r, score: sameNeighborhood + sharedCuisines };
+    })
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  return scored.slice(0, limit).map((entry) => entry.restaurant);
 }

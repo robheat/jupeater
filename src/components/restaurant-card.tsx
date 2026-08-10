@@ -5,9 +5,10 @@ import type { Restaurant } from "@/lib/restaurants";
 
 type RestaurantCardProps = {
   restaurant: Restaurant;
+  priority?: boolean;
 };
 
-export function RestaurantCard({ restaurant }: RestaurantCardProps) {
+export function RestaurantCard({ restaurant, priority = false }: RestaurantCardProps) {
   const coverPhoto = restaurant.photoUrls[0];
 
   return (
@@ -23,6 +24,7 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover"
+            priority={priority}
           />
         </Link>
       )}

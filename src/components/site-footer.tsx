@@ -10,6 +10,30 @@ export function SiteFooter() {
 
         <nav className="flex items-center gap-3">
           <Link
+            href="/restaurants"
+            className="pill-link rounded-full border border-teal-900/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-900"
+          >
+            Restaurants
+          </Link>
+          <Link
+            href="/categories"
+            className="pill-link rounded-full border border-teal-900/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-900"
+          >
+            Categories
+          </Link>
+          <Link
+            href="/map"
+            className="pill-link rounded-full border border-teal-900/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-900"
+          >
+            Map
+          </Link>
+          <Link
+            href="/faq"
+            className="pill-link rounded-full border border-teal-900/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-900"
+          >
+            FAQ
+          </Link>
+          <Link
             href="/privacy"
             className="pill-link rounded-full border border-teal-900/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-900"
           >
@@ -26,12 +50,6 @@ export function SiteFooter() {
             className="pill-link rounded-full border border-teal-900/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-900"
           >
             Submit
-          </Link>
-          <Link
-            href="/admin"
-            className="pill-link rounded-full border border-teal-900/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-900"
-          >
-            Admin
           </Link>
         </nav>
       </div>

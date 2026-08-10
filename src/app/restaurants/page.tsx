@@ -135,14 +135,14 @@ export default async function RestaurantsPage({ searchParams }: RestaurantsPageP
         </section>
 
         <section className="mt-8">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-teal-700">
+          <h2 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-teal-700">
             {filtered.length} listing{filtered.length === 1 ? "" : "s"} found
-          </p>
+          </h2>
 
           {filtered.length > 0 ? (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((restaurant) => (
-                <RestaurantCard key={restaurant.slug} restaurant={restaurant} />
+              {filtered.map((restaurant, index) => (
+                <RestaurantCard key={restaurant.slug} restaurant={restaurant} priority={index < 3} />
               ))}
             </div>
           ) : (

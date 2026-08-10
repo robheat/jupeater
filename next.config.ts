@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "arthurandsonsnyc.com" },
       { protocol: "https", hostname: "images.squarespace-cdn.com" },
       { protocol: "https", hostname: "thirstyturtlefl.com" },
+      { protocol: "https", hostname: "www.captaincharliesreefgrillfl.com" },
+      { protocol: "https", hostname: "dunedog.com" },
+      { protocol: "https", hostname: "www.lewissteakhouse.com" },
+      { protocol: "https", hostname: "www.littlemoirssweetfish.com" },
+      { protocol: "https", hostname: "voodoobayou.com" },
     ],
   },
 };
