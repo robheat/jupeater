@@ -53,12 +53,23 @@ export default function FaqPage() {
               <h2 className="display-title text-2xl text-teal-900">{faq.question}</h2>
               <p className="mt-2 text-sm leading-relaxed text-slate-700 sm:text-base">{faq.answer}</p>
               {faq.linkHref && faq.linkLabel && (
-                <Link
-                  href={faq.linkHref}
-                  className="mt-3 inline-flex text-sm font-semibold text-teal-900 underline-offset-4 hover:underline"
-                >
-                  {faq.linkLabel}
-                </Link>
+                faq.linkHref.startsWith("http") ? (
+                  <a
+                    href={faq.linkHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex text-sm font-semibold text-teal-900 underline-offset-4 hover:underline"
+                  >
+                    {faq.linkLabel}
+                  </a>
+                ) : (
+                  <Link
+                    href={faq.linkHref}
+                    className="mt-3 inline-flex text-sm font-semibold text-teal-900 underline-offset-4 hover:underline"
+                  >
+                    {faq.linkLabel}
+                  </Link>
+                )
               )}
             </div>
           ))}
