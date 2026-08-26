@@ -1118,6 +1118,35 @@ const restaurants: Restaurant[] = [
     dietaryOptions: ["Vegetarian Options", "Gluten-Sensitive Options"],
     lastVerified: "2026-08-10",
   },
+  {
+    slug: "ela-curry-and-cocktails",
+    name: "Ela Curry & Cocktails",
+    tagline: "Michelin-recognized Indian cuisine and craft cocktails in Palm Beach Gardens.",
+    address: "4650 Donald Ross Rd, Ste 100, Palm Beach Gardens, FL 33418",
+    location: {
+      lat: 26.8820562,
+      lon: -80.0732654,
+    },
+    neighborhood: "Palm Beach Gardens",
+    priceTier: "$$$",
+    cuisines: ["Indian"],
+    description:
+      "A refined, regionally-focused Indian restaurant from Flavor Builders chef Pushkar Marathe (also of Stage Kitchen & Bar), named for the Sanskrit word for cardamom. Serves shareable thali-style plates and street-food-inspired dishes built from family recipes, alongside an inventive cocktail program at the adjoining Peacock Tiki Bar. Recognized by the Michelin Guide in 2026.",
+    hours: [
+      "Mon-Sun: 4:30 PM - 9:00 PM",
+    ],
+    phone: "(561) 345-2196",
+    website: "https://www.elacurryandcocktails.com",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Ela+Curry+%26+Cocktails%2C+4650+Donald+Ross+Rd%2C+Ste+100%2C+Palm+Beach+Gardens%2C+FL+33418",
+    photoUrls: [
+      "https://images.getbento.com/accounts/285b30568c659265cd92d7f25f8e26b8/media/images/31351Ella-574.jpg",
+      "https://images.getbento.com/accounts/285b30568c659265cd92d7f25f8e26b8/media/images/98433DSC00774.jpg",
+      "https://images.getbento.com/accounts/285b30568c659265cd92d7f25f8e26b8/media/images/16666_MG_4929_copy.jpg",
+    ],
+    featured: false,
+    dietaryOptions: ["Vegetarian Options", "Vegan Options", "Gluten-Sensitive Options"],
+    lastVerified: "2026-08-26",
+  },
 ];
 
 export function getRestaurants(): Restaurant[] {
