@@ -1,8 +1,7 @@
 "use client";
 
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { useState } from "react";
+import { APIProvider, InfoWindow, Map, Marker } from "@vis.gl/react-google-maps";
 
 import type { Restaurant } from "@/lib/restaurants";
 
@@ -10,53 +9,71 @@ type RestaurantMapProps = {
   restaurants: Restaurant[];
 };
 
-const MAP_CENTER: [number, number] = [26.921, -80.0965];
+const MAP_CENTER = { lat: 26.921, lng: -80.0965 };
+const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
 
-function createMarkerIcon(number: number) {
-  return L.divIcon({
-    className: "",
-    html: `<span class="flex h-9 w-9 items-center justify-center rounded-full border border-white/90 bg-[var(--teal-900)] text-sm font-bold text-white shadow-lg shadow-teal-950/20">${number}</span>`,
-    iconSize: [36, 36],
-    iconAnchor: [18, 36],
-    popupAnchor: [0, -36],
-  });
+function markerIconUrl(number: number): string {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><circle cx="18" cy="18" r="16" fill="#08145f" stroke="#ffffff" stroke-width="2" /><text x="18" y="23" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">${number}</text></svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
 
 export default function RestaurantMap({ restaurants }: RestaurantMapProps) {
-  return (
-    <MapContainer center={MAP_CENTER} zoom={12} scrollWheelZoom className="h-full w-full">
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+  const [activeSlug, setActiveSlug] = useState<string | null>(null);
+  const activeRestaurant = restaurants.find((restaurant) => restaurant.slug === activeSlug) ?? null;
 
-      {restaurants.map((restaurant, index) => (
-        <Marker
-          key={restaurant.slug}
-          position={[restaurant.location.lat, restaurant.location.lon]}
-          icon={createMarkerIcon(index + 1)}
-        >
-          <Popup>
-            <p className="font-semibold text-teal-900">{restaurant.name}</p>
-            <p className="text-xs text-slate-600">{restaurant.neighborhood}</p>
-            <a
-              href={`/restaurants/${restaurant.slug}`}
-              className="mt-1 inline-block text-xs font-semibold text-teal-700 underline"
-            >
-              View listing
-            </a>
-            {" · "}
-            <a
-              href={restaurant.mapUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="text-xs font-semibold text-teal-700 underline"
-            >
-              Get directions
-            </a>
-          </Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+  if (!GOOGLE_MAPS_API_KEY) {
+    return (
+      <div className="flex h-full w-full items-center justify-center bg-[#eff7f2] p-6 text-center text-sm font-semibold text-teal-700">
+        Map unavailable - set NEXT_PUBLIC_GOOGLE_MAPS_API_KEY to enable it.
+      </div>
+    );
+  }
+
+  return (
+    <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
+      <Map
+        defaultCenter={MAP_CENTER}
+        defaultZoom={12}
+        gestureHandling="greedy"
+        disableDefaultUI={false}
+        className="h-full w-full"
+      >
+        {restaurants.map((restaurant, index) => (
+          <Marker
+            key={restaurant.slug}
+            position={{ lat: restaurant.location.lat, lng: restaurant.location.lon }}
+            icon={{ url: markerIconUrl(index + 1) }}
+            onClick={() => setActiveSlug(restaurant.slug)}
+          />
+        ))}
+
+        {activeRestaurant && (
+          <InfoWindow
+            position={{ lat: activeRestaurant.location.lat, lng: activeRestaurant.location.lon }}
+            onCloseClick={() => setActiveSlug(null)}
+          >
+            <div className="min-w-[160px]">
+              <p className="font-semibold text-teal-900">{activeRestaurant.name}</p>
+              <p className="text-xs text-slate-600">{activeRestaurant.neighborhood}</p>
+              <a
+                href={`/restaurants/${activeRestaurant.slug}`}
+                className="mt-1 inline-block text-xs font-semibold text-teal-700 underline"
+              >
+                View listing
+              </a>
+              {" · "}
+              <a
+                href={activeRestaurant.mapUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs font-semibold text-teal-700 underline"
+              >
+                Get directions
+              </a>
+            </div>
+          </InfoWindow>
+        )}
+      </Map>
+    </APIProvider>
   );
 }
