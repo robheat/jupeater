@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Cormorant_Garamond, Sora } from "next/font/google";
+import Script from "next/script";
 import { SiteFooter } from "@/components/site-footer";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-KRVP5BJ0T7";
 
 const displayFont = Cormorant_Garamond({
   variable: "--font-display",
@@ -88,6 +91,18 @@ export default function RootLayout({
         {children}
         <SiteFooter />
         <Analytics />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
