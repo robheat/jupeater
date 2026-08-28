@@ -40,6 +40,12 @@ export function SiteFooter() {
             Privacy
           </Link>
           <Link
+            href="/terms"
+            className="pill-link rounded-full border border-teal-900/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-900"
+          >
+            Terms
+          </Link>
+          <Link
             href="/contact"
             className="pill-link rounded-full border border-teal-900/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-900"
           >
