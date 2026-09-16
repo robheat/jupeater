@@ -1147,6 +1147,36 @@ const restaurants: Restaurant[] = [
     dietaryOptions: ["Vegetarian Options", "Vegan Options", "Gluten-Sensitive Options"],
     lastVerified: "2026-08-26",
   },
+  {
+    slug: "dimis-greek-house",
+    name: "Dimi's Greek House",
+    tagline: "A modern take on Greek tradition with wood-fired flavors in Tequesta.",
+    address: "157 US Highway 1, Tequesta, FL 33469",
+    location: {
+      lat: 26.9708673,
+      lon: -80.0875254,
+    },
+    neighborhood: "Tequesta",
+    priceTier: "$$",
+    cuisines: ["Greek", "Mediterranean"],
+    description:
+      "A newly opened Greek restaurant in the Tequesta Shoppes Plaza serving bold Mediterranean flavors and handcrafted cocktails - tableside-flamed saganaki, souvlaki skewers, char-broiled octopus, and mezedes built around authentic Greek feta and wood-fired sourdough pita.",
+    hours: [
+      "Mon: Closed",
+      "Tue-Sun: 12:00 PM - 10:00 PM",
+    ],
+    phone: "(561) 510-3381",
+    website: "https://dimisgreekhouse.com",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Dimi%27s+Greek+House%2C+157+US+Highway+1%2C+Tequesta%2C+FL+33469",
+    photoUrls: [
+      "https://dimisgreekhouse.com/photos/saganaki-flaming.jpg",
+      "https://dimisgreekhouse.com/photos/grilled-shrimp.jpg",
+      "https://dimisgreekhouse.com/photos/chicken-souvlaki.jpg",
+    ],
+    featured: false,
+    dietaryOptions: ["Vegetarian Options", "Gluten-Sensitive Options"],
+    lastVerified: "2026-09-16",
+  },
 ];
 
 export function getRestaurants(): Restaurant[] {

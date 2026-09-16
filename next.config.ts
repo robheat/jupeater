@@ -27,6 +27,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "www.lewissteakhouse.com" },
       { protocol: "https", hostname: "www.littlemoirssweetfish.com" },
       { protocol: "https", hostname: "voodoobayou.com" },
+      { protocol: "https", hostname: "dimisgreekhouse.com" },
     ],
   },
 };
