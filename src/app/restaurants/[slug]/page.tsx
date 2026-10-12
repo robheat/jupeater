@@ -8,7 +8,7 @@ import { RestaurantCard } from "@/components/restaurant-card";
 import { SiteHeader } from "@/components/site-header";
 import { getPublishedReviews } from "@/lib/backend";
 import { parseOpeningHours } from "@/lib/hours";
-import { getRelatedRestaurants, getRestaurantBySlug, getRestaurants } from "@/lib/restaurants";
+import { getRelatedRestaurants, getRestaurantBySlug, getRestaurants, type Restaurant } from "@/lib/restaurants";
 import { SITE_URL } from "@/lib/site";
 
 type RestaurantDetailPageProps = {
@@ -30,6 +30,42 @@ export function generateStaticParams() {
   return getRestaurants().map((restaurant) => ({ slug: restaurant.slug }));
 }
 
+// The layout template appends " | Jupeater" (11 chars); keeping the rest within
+// ~52 keeps the whole title inside what Google shows without truncating.
+const MAX_TITLE_LENGTH = 52;
+const MAX_DESCRIPTION_LENGTH = 160;
+
+function restaurantCity(restaurant: Restaurant): string {
+  return restaurant.address.match(/,\s*([A-Za-z .]+),\s*FL\b/)?.[1]?.trim() ?? "Jupiter";
+}
+
+/**
+ * Most searches for a restaurant page are its name plus hours, menu or reservations, so the
+ * title leads with name + town and names what the page actually has. Longer names fall back
+ * to shorter variants rather than being cut off in results.
+ */
+function restaurantSeoTitle(restaurant: Restaurant): string {
+  const city = restaurantCity(restaurant);
+  const place = restaurant.name.toLowerCase().includes(city.toLowerCase())
+    ? `${restaurant.name} FL`
+    : `${restaurant.name} ${city} FL`;
+  const candidates = [
+    `${place}: Hours, Phone & Photos`,
+    `${place}: Hours & Phone`,
+    `${place}: Hours`,
+    place,
+  ];
+  return candidates.find((candidate) => candidate.length <= MAX_TITLE_LENGTH) ?? restaurant.name;
+}
+
+function restaurantSeoDescription(restaurant: Restaurant): string {
+  const lead = (restaurant.seoSummary ?? restaurant.tagline).trim().replace(/([^.!?])$/, "$1.");
+  const withHours = `${lead} Hours: ${restaurant.hours.join("; ")}.`;
+  if (withHours.length <= MAX_DESCRIPTION_LENGTH) return withHours;
+  const generic = `${lead} Hours, phone, address and photos.`;
+  return generic.length <= MAX_DESCRIPTION_LENGTH ? generic : lead;
+}
+
 export async function generateMetadata({
   params,
 }: RestaurantDetailPageProps): Promise<Metadata> {
@@ -40,8 +76,8 @@ export async function generateMetadata({
     return {};
   }
 
-  const title = `${restaurant.name} | ${restaurant.neighborhood}`;
-  const description = restaurant.tagline;
+  const title = restaurant.seoTitle ?? restaurantSeoTitle(restaurant);
+  const description = restaurantSeoDescription(restaurant);
   const image = restaurant.photoUrls[0];
 
   return {

@@ -27,8 +27,11 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     return {};
   }
 
+  // A count signals a concrete list; it comes from the same list the page renders.
+  const count = getRestaurantsForCategory(slug).length;
+
   return {
-    title: category.title,
+    title: count >= 2 ? `${category.title} (${count} Picks)` : category.title,
     description: category.description,
     alternates: { canonical: `${SITE_URL}/categories/${category.slug}` },
   };

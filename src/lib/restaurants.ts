@@ -23,6 +23,10 @@ export type Restaurant = {
   featured: boolean;
   dietaryOptions: string[];
   lastVerified: string;
+  /** Overrides the generated "<name> <city> FL: Hours, Phone & Photos" page title (the layout still appends " | Jupeater"). Only promise what the page shows. */
+  seoTitle?: string;
+  /** Overrides the meta description lead-in; the restaurant's hours are appended automatically so they can't drift. */
+  seoSummary?: string;
 };
 
 const restaurants: Restaurant[] = [
@@ -90,6 +94,8 @@ const restaurants: Restaurant[] = [
     featured: true,
     dietaryOptions: ["Vegetarian Options"],
     lastVerified: "2026-07-21",
+    // Search Console: nearly all impressions are name searches (utiki, u tiki jupiter) plus hours/reservations intent.
+    seoSummary: "Dog-friendly waterfront tiki bar at Jupiter Inlet Marina with lighthouse views and beach seating.",
   },
   {
     slug: "little-moirs-food-shack",

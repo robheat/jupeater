@@ -9,9 +9,9 @@ import {
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Restaurant Categories",
+  title: "Jupiter FL Restaurants by Category",
   description:
-    "Browse SEO-focused Jupiter-area dining categories including waterfront, seafood, date night, and family-friendly restaurants.",
+    "Find the best Jupiter-area restaurants by category: waterfront, seafood, sushi, Italian, Mexican, brunch, happy hour, date night, family friendly and more.",
   alternates: { canonical: `${SITE_URL}/categories` },
 };
 

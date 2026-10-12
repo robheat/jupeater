@@ -5,8 +5,8 @@ import { SiteHeader } from "@/components/site-header";
 import { getRestaurants } from "@/lib/restaurants";
 
 export const metadata: Metadata = {
-  title: "Map View",
-  description: "See every Jupiter-area restaurant listing plotted on an interactive map.",
+  title: "Jupiter FL Restaurant Map",
+  description: `See all ${getRestaurants().length} Jupiter-area restaurants on an interactive map, from Juno Beach to Tequesta.`,
 };
 
 export default function MapPage() {

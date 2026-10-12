@@ -13,9 +13,9 @@ import {
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "All Area Restaurants",
+  title: `All ${getRestaurants().length} Jupiter FL Area Restaurants`,
   description:
-    "Browse and filter every Jupiter-area restaurant listing by neighborhood, cuisine, and price.",
+    "Browse and filter every Jupiter-area restaurant by neighborhood, cuisine and price, with hours, phone numbers and photos.",
   alternates: { canonical: `${SITE_URL}/restaurants` },
 };
 

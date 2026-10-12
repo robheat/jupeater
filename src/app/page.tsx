@@ -8,6 +8,8 @@ import { getFeaturedRestaurants } from "@/lib/restaurants";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
+  // Brand last: the homepage's searches are "jupiter restaurants" / "waterfront restaurants jupiter", not "jupeater".
+  title: { absolute: "Jupiter FL Restaurants & Waterfront Dining Guide | Jupeater" },
   alternates: { canonical: SITE_URL },
 };
 
