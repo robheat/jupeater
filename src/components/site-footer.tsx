@@ -58,7 +58,7 @@ export function SiteFooter() {
             Submit
           </Link>
           <a
-            href="https://jupiterfl360.com"
+            href="https://www.jupiterfl360.com"
             target="_blank"
             rel="noopener noreferrer"
             className="pill-link rounded-full border border-teal-900/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-900"

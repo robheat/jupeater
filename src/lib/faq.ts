@@ -108,7 +108,7 @@ const faqs: FaqItem[] = [
     question: "What else is there to do in Jupiter, FL besides eating out?",
     answer:
       "Jupeater focuses specifically on restaurants, but our sister site Jupiter FL 360 covers the rest of the area - beaches, parks and nature trails, boating and wildlife viewing, the Jupiter Inlet Lighthouse, and a regularly updated local events calendar.",
-    linkHref: "https://jupiterfl360.com",
+    linkHref: "https://www.jupiterfl360.com",
     linkLabel: "Explore things to do in Jupiter FL",
   },
 ];
