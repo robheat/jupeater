@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 
 import { RestaurantCard } from "@/components/restaurant-card";
@@ -14,6 +15,32 @@ import { SITE_URL } from "@/lib/site";
 type CategoryPageProps = {
   params: Promise<{ slug: string }>;
 };
+
+const INLINE_LINK = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+
+// Category copy is plain text; a `[label](href)` in a paragraph becomes a link.
+function renderParagraph(paragraph: string) {
+  const parts: ReactNode[] = [];
+  let last = 0;
+  for (const match of paragraph.matchAll(INLINE_LINK)) {
+    const [whole, label, href] = match;
+    parts.push(paragraph.slice(last, match.index));
+    parts.push(
+      href.startsWith("http") ? (
+        <a key={match.index} href={href} className="font-semibold text-teal-900 underline underline-offset-4">
+          {label}
+        </a>
+      ) : (
+        <Link key={match.index} href={href} className="font-semibold text-teal-900 underline underline-offset-4">
+          {label}
+        </Link>
+      ),
+    );
+    last = match.index + whole.length;
+  }
+  parts.push(paragraph.slice(last));
+  return parts;
+}
 
 export function generateStaticParams() {
   return getRestaurantCategories().map((category) => ({ slug: category.slug }));
@@ -91,7 +118,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           </h2>
           <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-700 sm:text-base">
             {category.seoParagraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+              <p key={paragraph}>{renderParagraph(paragraph)}</p>
             ))}
           </div>
         </section>
