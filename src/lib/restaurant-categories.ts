@@ -89,7 +89,7 @@ const categories: RestaurantCategory[] = [
       "Discover the best Mexican restaurants in Jupiter, FL, from casual taco spots to upscale modern Mexican kitchens and cantinas.",
     seoParagraphs: [
       "Jupeater currently lists three Mexican restaurants, and they cover three distinct occasions: a quick taco stop, a neighborhood cantina, and an upscale Harbourside patio bar.",
-      "Taco Maki, in Abacoa, is built for a fast, casual meal - order at the counter, eat, move on. Casa Tequila, out in Jupiter Farms, is more of a sit-down neighborhood spot. Calaveras Cantina, at Harbourside Place, is the most polished of the three, with craft cocktails and Intracoastal patio seating that makes it a legitimate date-night option rather than just a casual Mexican dinner.",
+      "Taco Maki, in Abacoa, is built for a fast, casual meal - order at the counter, eat, move on. Casa Tequila, out in Jupiter Farms, is more of a sit-down neighborhood spot. Calaveras Cantina, at [Harbourside Place](https://www.jupiterfl360.com/guide/activities/harbourside-place), is the most polished of the three, with craft cocktails and Intracoastal patio seating that makes it a legitimate date-night option rather than just a casual Mexican dinner.",
       "If you're deciding between the three, distance and occasion matter more than menu differences - all three do tacos and margaritas well, but only Calaveras Cantina is really built for a longer, drinks-forward evening out.",
     ],
   },
@@ -102,7 +102,7 @@ const categories: RestaurantCategory[] = [
     seoParagraphs: [
       "Only three Jupeater restaurants run an actual dedicated brunch service, as opposed to just opening early, and each does it differently enough that it's worth knowing which before you commit a Sunday morning to it.",
       "Guanabanas runs its brunch dockside at the Jupiter Inlet from 10 AM to 2 PM on Sundays, with the tiki-bar atmosphere intact even in the morning. Ruth's Chris pairs a more traditional Sunday brunch service with its usual dinner hours later the same day. Sea Racha's brunch is a weekend add-on to its regular sushi-and-seafood menu, so expect a lighter, more improvised spread than the other two.",
-      "Because this list is short, check each restaurant's current hours directly before you go - brunch service is the most likely thing on a menu to shift seasonally, and none of these three run it every day of the week.",
+      "Because this list is short, check each restaurant's current hours directly before you go - brunch service is the most likely thing on a menu to shift seasonally, and none of these three run it every day of the week. If you're planning the rest of the weekend around it, Jupiter FL 360 lists [what's on in Jupiter this weekend](https://www.jupiterfl360.com/events/this-weekend).",
     ],
   },
   {
