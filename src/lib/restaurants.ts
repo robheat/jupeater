@@ -87,6 +87,10 @@ const restaurants: Restaurant[] = [
     website: "https://www.utikibeach.com",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=U-Tiki+Beach%2C+1095+N+Highway+A1A%2C+Jupiter%2C+FL+33477",
     photoUrls: [
+      "/restaurants/u-tiki-beach/u-tiki-beach-1.jpg",
+      "/restaurants/u-tiki-beach/u-tiki-beach-2.jpg",
+      "/restaurants/u-tiki-beach/u-tiki-beach-3.jpg",
+      "/restaurants/u-tiki-beach/u-tiki-beach-4.jpg",
       "https://static.wixstatic.com/media/a9bfdc_0c5c2d85877e4263ac4a48b9ab06dc3b.jpg/v1/fill/w_972,h_600,al_c,q_80,enc_avif,quality_auto/a9bfdc_0c5c2d85877e4263ac4a48b9ab06dc3b.jpg",
       "https://static.wixstatic.com/media/a9bfdc_d492826766124d759579d1f671c7afb9.jpg/v1/fill/w_972,h_600,al_c,q_80,enc_avif,quality_auto/a9bfdc_d492826766124d759579d1f671c7afb9.jpg",
       "https://static.wixstatic.com/media/1149de6bf15f40c587573bf9311dc32c.jpg/v1/fill/w_972,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1149de6bf15f40c587573bf9311dc32c.jpg",
