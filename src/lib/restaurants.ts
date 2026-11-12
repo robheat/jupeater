@@ -1187,6 +1187,37 @@ const restaurants: Restaurant[] = [
     dietaryOptions: ["Vegetarian Options", "Gluten-Sensitive Options"],
     lastVerified: "2026-09-16",
   },
+  {
+    slug: "hokkaido-hibachi-sushi",
+    name: "Hokkaido Hibachi & Sushi",
+    tagline: "Tableside hibachi grills and a full sushi bar in Abacoa Town Center.",
+    address: "1200 Town Center Dr, Ste 125, Jupiter, FL 33458",
+    location: {
+      lat: 26.889643,
+      lon: -80.114615,
+    },
+    neighborhood: "Abacoa",
+    priceTier: "$$",
+    cuisines: ["Japanese", "Sushi"],
+    description:
+      "A longtime Abacoa Town Center favorite where chefs cook steak, seafood, and fried rice on teppanyaki grills right at your table, alongside a full sushi bar and a lounge bar with TVs and saketinis. The tableside cooking show makes it a go-to for family birthdays and group dinners, and the bar runs a happy hour menu.",
+    hours: [
+      "Mon-Thu: 4:00 PM - 10:00 PM",
+      "Fri-Sat: 4:00 PM - 11:00 PM",
+      "Sun: 4:00 PM - 10:00 PM",
+    ],
+    phone: "(561) 799-7999",
+    website: "https://hokkaidohibachi.com",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Hokkaido+Hibachi+%26+Sushi%2C+1200+Town+Center+Dr%2C+Ste+125%2C+Jupiter%2C+FL+33458",
+    photoUrls: [
+      "/restaurants/hokkaido-hibachi-sushi/hokkaido-hibachi-sushi-1.jpg",
+      "/restaurants/hokkaido-hibachi-sushi/hokkaido-hibachi-sushi-2.jpg",
+      "/restaurants/hokkaido-hibachi-sushi/hokkaido-hibachi-sushi-3.jpg",
+    ],
+    featured: false,
+    dietaryOptions: ["Vegetarian Options"],
+    lastVerified: "2026-11-12",
+  },
 ];
 
 export function getRestaurants(): Restaurant[] {
