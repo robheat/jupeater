@@ -28,6 +28,10 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "www.littlemoirssweetfish.com" },
       { protocol: "https", hostname: "voodoobayou.com" },
       { protocol: "https", hostname: "dimisgreekhouse.com" },
+      { protocol: "https", hostname: "1000north.com" },
+      { protocol: "https", hostname: "cdn.prod.website-files.com" },
+      { protocol: "https", hostname: "squaregrouper.net" },
+      { protocol: "https", hostname: "berryfresh.cafe" },
     ],
   },
 };
