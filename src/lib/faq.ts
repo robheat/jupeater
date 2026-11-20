@@ -11,7 +11,7 @@ const faqs: FaqItem[] = [
     slug: "waterfront-restaurants",
     question: "What are the best waterfront restaurants in Jupiter, FL?",
     answer:
-      "Jupiter has several restaurants directly on the Jupiter Inlet, the Intracoastal, or a marina - places like Guanabanas, U-Tiki Beach, and Jetty's sit right on the inlet, while others like Zunzibar and Voodoo Bayou are on the Intracoastal further south. The full list, with notes on which body of water each one sits on, is on our waterfront dining page.",
+      "Jupiter has several restaurants directly on the Jupiter Inlet, the Intracoastal, or a marina - places like Guanabanas, U-Tiki Beach, Jetty's, and 1000 North sit right on the inlet, while others like Zunzibar and the restaurants at Harbourside Place are on the Intracoastal a little further south. The full list, with notes on which body of water each one sits on, is on our waterfront dining page.",
     linkHref: "/categories/waterfront-dining-jupiter-fl",
     linkLabel: "Browse waterfront dining in Jupiter FL",
   },
@@ -19,7 +19,7 @@ const faqs: FaqItem[] = [
     slug: "best-seafood",
     question: "Where can I find good seafood in Jupiter, FL?",
     answer:
-      "Jupiter's seafood restaurants split into two camps: classic Florida seafood kitchens serving fresh local catch, and sushi-forward spots where raw preparations are the focus. Some restaurants, like Dive Bar and Sea Racha, do both. See our full seafood category for the current list, sorted with neighborhood and price tier.",
+      "Jupiter's seafood restaurants split into two camps: classic Florida seafood kitchens serving fresh local catch, and sushi-forward spots where raw preparations are the focus. Some restaurants, like Dive Bar and Hog Snappers, do both. See our full seafood category for the current list, sorted with neighborhood and price tier.",
     linkHref: "/categories/best-seafood-restaurants-jupiter-fl",
     linkLabel: "Browse seafood restaurants in Jupiter FL",
   },
@@ -43,7 +43,7 @@ const faqs: FaqItem[] = [
     slug: "italian-food",
     question: "Where can I get good Italian food in Jupiter, FL?",
     answer:
-      "Jupiter has five restaurants built specifically around Italian cooking, from Lynora's, which has served the area since 1976, to newer openings like Arthur & Sons and Evo Italian in Tequesta. Not every one makes fresh pasta in-house, so it's worth checking each listing's description if that matters to you.",
+      "Jupeater lists several restaurants built specifically around Italian cooking, from Lynora's, which has served the area since 1976, to Arthur & Sons, a New York red-sauce transplant, with Evo Italian covering Tequesta. Not every one makes fresh pasta in-house, so it's worth checking each listing's description if that matters to you.",
     linkHref: "/categories/best-italian-restaurants-jupiter-fl",
     linkLabel: "Browse Italian restaurants in Jupiter FL",
   },
@@ -51,7 +51,7 @@ const faqs: FaqItem[] = [
     slug: "sushi",
     question: "What's the best sushi in Jupiter, FL?",
     answer:
-      "Six Jupiter-area restaurants treat sushi as a real part of the menu, split between Asian-fusion kitchens (like Thai Lotus and Sea Racha) and seafood restaurants with a sushi bar alongside a raw bar (like Dive Bar and Hog Snappers). Blackbird Modern Asian is the newest and most upscale option.",
+      "Jupiter's sushi restaurants split between Asian kitchens that pair rolls with Thai, Japanese, or fusion menus (like Thai Lotus, 2 Vinez, and Hokkaido, which adds tableside hibachi) and seafood restaurants with a sushi bar alongside the rest of the menu (like Dive Bar and Hog Snappers). Blackbird Modern Asian is the most upscale option.",
     linkHref: "/categories/best-sushi-restaurants-jupiter-fl",
     linkLabel: "Browse sushi restaurants in Jupiter FL",
   },
@@ -59,7 +59,7 @@ const faqs: FaqItem[] = [
     slug: "brunch",
     question: "Where can I find brunch in Jupiter, FL?",
     answer:
-      "Only a few Jupiter restaurants run a real, dedicated brunch service rather than just opening early. Guanabanas runs a dockside brunch at the Jupiter Inlet on Sundays, Ruth's Chris pairs brunch with its usual Sunday dinner hours, and Sea Racha offers a lighter weekend brunch alongside its regular menu.",
+      "Several Jupiter-area restaurants run a real brunch service rather than just opening early. Guanabanas and Jetty's both do Sunday brunch overlooking the Jupiter Inlet, SaltBird serves a Southern-style Sunday brunch, and Rocco's Tacos in Palm Beach Gardens offers a bottomless weekend brunch. For an everyday option, Berry Fresh Cafe serves breakfast and brunch from 7 AM daily.",
     linkHref: "/categories/best-brunch-restaurants-jupiter-fl",
     linkLabel: "Browse brunch restaurants in Jupiter FL",
   },
@@ -67,7 +67,7 @@ const faqs: FaqItem[] = [
     slug: "happy-hour",
     question: "Where can I find happy hour specials in Jupiter, FL?",
     answer:
-      "Several Jupiter restaurants run a dedicated happy hour, including waterfront spots like U-Tiki Beach and Zunzibar, neighborhood bars like Hap & Hooch, and newer openings like Lucky Shuck and Voodoo Bayou. Specials and time windows shift seasonally, so it's worth confirming current hours directly before you go.",
+      "Several Jupiter restaurants run a dedicated happy hour, including waterfront spots like U-Tiki Beach and Zunzibar, neighborhood bars like Hap & Hooch, and newer openings like Lucky Shuck and SaltBird. Specials and time windows shift seasonally, so it's worth confirming current hours directly before you go.",
     linkHref: "/categories/best-happy-hour-restaurants-jupiter-fl",
     linkLabel: "Browse happy hour restaurants in Jupiter FL",
   },
@@ -75,7 +75,7 @@ const faqs: FaqItem[] = [
     slug: "live-music",
     question: "What restaurants in Jupiter, FL have live music?",
     answer:
-      "A handful of Jupiter restaurants regularly book live entertainment - Guanabanas has an outdoor tiki stage, Little Moir's Food Shack runs live music nightly, Nieko's Neighborhood Bar hosts karaoke and comedy nights, and Eddie V's features a lounge trio. Lineups change weekly, so it's worth checking directly if a specific night matters to you.",
+      "Several Jupiter restaurants regularly book live entertainment - Guanabanas has an outdoor tiki stage, Square Grouper has live music every day (21 and over), Little Moir's Food Shack runs live music nightly, Nieko's Neighborhood Bar hosts karaoke and comedy nights, SaltBird has jazz on Sunday evenings, and Eddie V's features a lounge trio. Lineups change weekly, so it's worth checking directly if a specific night matters to you.",
     linkHref: "/categories/live-music-restaurants-jupiter-fl",
     linkLabel: "Browse live music restaurants in Jupiter FL",
   },
