@@ -158,6 +158,9 @@ const restaurants: Restaurant[] = [
     website: "https://www.jettysjupiter.com",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Jetty's+Waterfront+Restaurant%2C+1075+N+Highway+A1A%2C+Jupiter%2C+FL+33477",
     photoUrls: [
+      "/restaurants/jettys-waterfront/jettys-waterfront-1.jpg",
+      "/restaurants/jettys-waterfront/jettys-waterfront-2.jpg",
+      "/restaurants/jettys-waterfront/jettys-waterfront-3.jpg",
       "https://static.wixstatic.com/media/a9bfdc_bd58b3e48d0d4fbe96090dd6e0a9e0db~mv2.jpg",
       "https://static.wixstatic.com/media/a9bfdc_0f0ce40a171c4f0b8247afedf353c528~mv2.jpg",
       "https://static.wixstatic.com/media/a9bfdc_5c6ddab51c6b405e8f43439d30a55f6e~mv2.jpg",
