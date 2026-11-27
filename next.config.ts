@@ -32,6 +32,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "cdn.prod.website-files.com" },
       { protocol: "https", hostname: "squaregrouper.net" },
       { protocol: "https", hostname: "berryfresh.cafe" },
+      { protocol: "https", hostname: "upload.opalcollection.com" },
     ],
   },
 };
