@@ -1386,7 +1386,7 @@ const restaurants: Restaurant[] = [
     cuisines: ["American", "Seafood"],
     waterfront: true,
     description:
-      "The signature restaurant at Jupiter Beach Resort & Spa, billed as Jupiter's only oceanfront restaurant, with a sweeping outdoor verandah beside the beach. It opened in 2023 in the former Sinclair's Ocean Grill space and serves modern coastal cuisine: Indian River Lagoon oysters, two-tier seafood towers, crab-stuffed avocado, and a rotating selection of simply prepared local fish, plus steak frites and handcrafted cocktails. Breakfast, lunch, and dinner are served daily, happy hour runs Monday through Friday from 4 to 6 PM, and the bar stays open until 11 PM.",
+      "The signature restaurant at Jupiter Beach Resort & Spa, billed as Jupiter's only oceanfront restaurant, with a sweeping outdoor verandah beside the beach. It opened in 2023 in the former Sinclair's Ocean Grill space and serves modern coastal cuisine: a seafood bar with oysters and an iced shellfish tower, crab Louis-stuffed avocado, and a simply prepared fish list that includes Florida grouper, snapper, and mahi-mahi, plus fish tacos, a prime burger, and steak frites. After 5 PM the menu adds entrees like lump crab-crusted Florida grouper and beef tenderloin, and the bar pours from a glass-walled spirit room. Breakfast, lunch, and dinner are served daily, happy hour runs Monday through Friday from 4 to 6 PM, and the bar stays open until 11 PM.",
     hours: [
       "Mon-Sun: 7:00 AM - 11:00 AM (Breakfast), 11:30 AM - 5:00 PM (Lunch), 5:00 PM - 10:00 PM (Dinner)",
     ],
@@ -1394,6 +1394,13 @@ const restaurants: Restaurant[] = [
     website: "https://www.opalcollection.com/jupiter-beach/restaurants/latitudes/",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Latitudes%2C+Jupiter+Beach+Resort%2C+5+N+Highway+A1A%2C+Jupiter%2C+FL+33477",
     photoUrls: [
+      "/restaurants/latitudes-jupiter-beach-resort/latitudes-jupiter-beach-resort-1.jpg",
+      "/restaurants/latitudes-jupiter-beach-resort/latitudes-jupiter-beach-resort-2.jpg",
+      "/restaurants/latitudes-jupiter-beach-resort/latitudes-jupiter-beach-resort-3.jpg",
+      "/restaurants/latitudes-jupiter-beach-resort/latitudes-jupiter-beach-resort-4.jpg",
+      "/restaurants/latitudes-jupiter-beach-resort/latitudes-jupiter-beach-resort-5.jpg",
+      "/restaurants/latitudes-jupiter-beach-resort/latitudes-jupiter-beach-resort-6.jpg",
+      "/restaurants/latitudes-jupiter-beach-resort/latitudes-jupiter-beach-resort-7.jpg",
       "https://upload.opalcollection.com/app/uploads/sites/9/2022/05/15165035/Latitudes-Dining-scaled-e1684184037833-1920x1065.webp",
       "https://upload.opalcollection.com/app/uploads/sites/9/2022/05/13172851/latitudes-jupiter-new-1920x1936.webp",
       "https://upload.opalcollection.com/app/uploads/sites/9/2022/05/15164954/Latitudes-Bar-1920x1280.webp",
